@@ -8,6 +8,19 @@
 		    \caption{Diagrama Interfaz Bloque PisoActual}
 		    \label{fig:BloqueIAscensor}
 	\end{figure}
+	
+	Esta es una entidad de alto nivel que encapsula todo el funcionamiento del ascensor. Se puede ver el diagrama de bloques interno de esta entidad en la siguiente figura: 
+	
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{BloqueAscensorInterior}
+		    \caption{Diagrama interno del Bloque PisoActual}
+		    \label{fig:BloqueIAscensorInterior}
+	\end{figure}
+	
+	Cada bloque se desgrana en los siguientes apartados.
+	
+
 \subsection{Bloque \textit{Controlador Motor}:}
 
 \subsection{Bloque \textit{Controlador Puerta}:}
@@ -39,21 +52,41 @@
     
     Como se puede apreciar en el siguiente diagrama este bloque tiene una entrada, un vector de 4 bits (los finales de carrera de cada piso) y una salida, también de 4 bits, codificando el piso en el que se encuentra actualmente. \\ 
     
-    Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal. \\ 
+    Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\ 
     
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloquePisoActual}:
     
     \begin{figure}[H]
 		    \centering
+		    \hspace*{-1.8cm}
 		    \includegraphics[width = 0.6\textwidth ]{BloquePisoActual}
 		    \caption{Diagrama Bloque PisoActual}
 		    \label{fig:BloquePisoActual}
 	\end{figure}
 	
 	Se puede consultar el código VHDL de este módulo en el Apartado \ref{code:PisoActual} así como el código de su testbench correspondiente en el Apartado \ref{code:PisoActual_tb}.
-    
-\subsection{Bloque \textit{Comportamiento Interno}:}
 
 \subsection{Bloque \textit{Bloqueador pisoVoy}:}
+    
+    La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueBloqueadorPisoVoy}:
+    
+    
+    \begin{figure}[H]
+		    \centering
+		    \hspace*{-1.8cm}
+		    \includegraphics[width = 0.6\textwidth ]{BloqueBloqueadorPisoVoy}
+		    \caption{Diagrama Bloque Bloqueador PisoVoy}
+		    \label{fig:BloqueBloqueadorPisoVoy}
+	\end{figure}
+	
 
 \subsection{Bloque \textit{Comparador}:}
+
+    La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueComparador}:
+    
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueComparador}
+		    \caption{Diagrama Bloque Comparador}
+		    \label{fig:BloqueComparador}
+	\end{figure}
