@@ -1,0 +1,112 @@
+\documentclass[a4paper,11pt]{article} %openright - los capítulos empiezan en páginas impares; 10pt tamaño de texto
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc} %para trabajar con símbolos no anglosajones
+
+\usepackage[title,titletoc,toc]{appendix}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{transparent}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{minted}
+\usepackage{anysize}
+
+\marginsize{3cm}{2cm}{2cm}{2cm} % Controla los márgenes {izquierda}{derecha}{arriba}{abajo}. 
+
+\graphicspath{{Pictures/}} %path de los gráficos
+
+%
+% A continuación se define la portada
+%
+
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,%
+			keepaspectratio]{PortadaAzul.pdf}%
+			\vfill
+		}}}
+%
+% A continuación está el encabezado y pie de página
+%
+		
+\pagestyle{fancy}
+\fancyfoot[RE,RO]{Página \thepage}
+\fancyfoot[C]{\ }
+\fancyfoot[LE,LO]{\textcolor{gray}{SED. Proyecto Ascensor}}
+\fancyhead[RE,RO]{Grupo N\textdegree 4}
+\fancyhead[LE,LO]{\ }
+
+%
+% A continuación empieza el documento
+%
+
+\begin{document}
+
+    
+    %
+    % A continuación empieza la portada del documento
+    %
+
+	\begin{titlepage}
+		\pagestyle{empty}
+		\AddToShipoutPicture*{\BackgroundPic}
+		\begin{center}
+			\Huge \textbf{Proyecto final de asignatura:\\ \textsc{“Ascensor”}}
+			\vspace{5cm}
+			
+			\large \textsc{DPTO. ELECTRÓNICA, AUTOMÁTICA E INFORMÁTICA	INDUSTRIAL} 
+		\end{center}
+		\vspace{8cm}
+		
+		\hspace{1cm}\large Asignatura de Sistemas Electrónicos Digitales
+		
+		\hspace{1cm}\large Curso 2016-2017\\
+		
+		
+		\hspace{1cm}\large \textbf{Arancha Canelo Martin} \hspace{1.65cm} N\textdegree 50654 \\ 
+		
+		\hspace{1cm}\large \textbf{Enrique Heredia Aguado} \hspace{1.4cm} N\textdegree 50688 \\ 
+		
+		\hspace{1cm}\large \textbf{Alberto Beneit Benita} \hspace{1.95cm} N\textdegree 51104
+		\ClearShipoutPicture
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+	\pagestyle{fancy}
+	
+	%\addtocontents{toc}{\hspace{-7.5mm} \textbf{Contenidos:}}
+	\addtocontents{toc}{\hfill \textbf{Página:} \par}
+	\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
+	\tableofcontents
+	\newpage
+
+    %
+    % A continuación empieza el contenido del documento
+    %
+    \section{Introducción y objetivos:}
+        \input{IntroObj} %importa el fichero IntroObj.tex con la introducción, objetivos y explicación general del proyecto
+        
+    \section{Diagrama de bloques:}
+    
+        \input{DiagramaBloques} %importa el fichero DiagramaBloques.tex
+        
+    \section{Código:}
+    
+        \input{Codigo} %importa el fichero Codigo.tex
+        
+    
+    \input{Apendices} %importa el fichero Apendices.tex
+
+\end{document}
