@@ -19,6 +19,18 @@
 \usepackage{subfigure}
 \usepackage{minted}
 \usepackage{anysize}
+\usepackage{fontawesome}
+
+%
+% Hace una marca de agua
+%
+
+\usepackage{background}
+\SetBgContents{ENTREGA PROVISIONAL}
+\SetBgScale{5} %% Escala del texto
+\SetBgColor{black!10!white} %% Tonalidad
+
+
 
 \marginsize{3cm}{2cm}{2cm}{2cm} % Controla los márgenes {izquierda}{derecha}{arriba}{abajo}. 
 
@@ -66,7 +78,9 @@
 			\Huge \textbf{Proyecto final de asignatura:\\ \textsc{“Ascensor”}}
 			\vspace{5cm}
 			
-			\large \textsc{DPTO. ELECTRÓNICA, AUTOMÁTICA E INFORMÁTICA	INDUSTRIAL} 
+			\Large \textsc{Dpto. Electrónica, Automática e Informática	Industrial} \\ 
+			
+			\large \textsc{ETSIDI - UPM}
 		\end{center}
 		\vspace{8cm}
 		
@@ -95,14 +109,14 @@
     %
     % A continuación empieza el contenido del documento
     %
-    \section{Introducción y objetivos:}
+    \section{Introducción:} \label{section:Introduccion}
         \input{IntroObj} %importa el fichero IntroObj.tex con la introducción, objetivos y explicación general del proyecto
         
-    \section{Diagrama de bloques:}
+    \section{Diagrama de bloques:} \label{section:DiagBloques}
     
         \input{DiagramaBloques} %importa el fichero DiagramaBloques.tex
         
-    \section{Código:}
+    \section{Código:} \label{section:Codigo}
     
         \input{Codigo} %importa el fichero Codigo.tex
         

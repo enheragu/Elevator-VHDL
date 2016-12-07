@@ -34,11 +34,8 @@ ARCHITECTURE behavior OF PisoActual_tb IS
    test: vtest_vector := ( 
 				 (sensorEstoy => "0000", pisoEstoy => "0000"), 
 				 (sensorEstoy => "0001", pisoEstoy => "0001"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
 				 (sensorEstoy => "0010", pisoEstoy => "0010"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
 				 (sensorEstoy => "0100", pisoEstoy => "0100"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
 				 (sensorEstoy => "1000", pisoEstoy => "1000")		 
 	);
  
@@ -56,8 +53,8 @@ BEGIN
 		for i in 0 to test'high loop
 			sensorEstoy <= test(i).sensorEstoy;
 			wait for 20 ns;
-			if (test(i).sensorEstoy = "0000") then
-				test(i).pisoEstoy <= test(i-1).sensorEstoy;
+			if (test(i).sensorEstoy /= "0000") then
+				test(i).pisoEstoy <= test(i).sensorEstoy;
 			assert pisoEstoy = test(i).pisoEstoy
 				report "salida incorrecta"
 				severity failure;
