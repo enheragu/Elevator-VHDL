@@ -32,6 +32,26 @@
 
 \subsection{Código Bloque \textit{Bloqueador pisoVoy (testbench)}:} \label{code:BloqueadorpisoVoy_tb}
 
+\subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{code:DecodificadorBinarioEntero}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero.vhd}
+    
+    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el quepretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{BloqueDecodificadorBinarioEnteroOK}
+		    \caption{Salida en los displays de 7 segmentos}
+		    \label{fig:BloqueDecodificadorBinarioEnteroOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{BloqueDecodificadorBinarioEnteroImplementacion}
+		    \caption{Salida en los displays de 7 segmentos}
+		    \label{fig:BloqueDecodificadorBinarioEnteroImplementacion}
+	\end{figure}
+    
+\subsection{Código Bloque \textit{Decodificador Binario a Entero (testbench)}:} \label{code:DecodificadorBinarioEntero_tb}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero_tb.vhd}
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
 
 \subsection{Código Bloque \textit{Comparador (testbench)}:} \label{code:Comparador_tb}
