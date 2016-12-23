@@ -31,7 +31,7 @@ ARCHITECTURE behavior OF PisoActual_tb IS
 	
 	type vtest_vector is array (natural range <>) of vtest;
  
-   test: vtest_vector := ( 
+   constatnt test: vtest_vector := ( 
 				 (sensorEstoy => "0000", pisoEstoy => "0000"), 
 				 (sensorEstoy => "0001", pisoEstoy => "0001"),
 				 (sensorEstoy => "0000", pisoEstoy => "0000"),
@@ -57,7 +57,7 @@ BEGIN
 			sensorEstoy <= test(i).sensorEstoy;
 			wait for 20 ns;
 			if (test(i).sensorEstoy = "0000") then
-				test(i).pisoEstoy <= test(i-1).sensorEstoy;
+				assert pisoEstoy = test(i-1).sensorEstoy;
 			assert pisoEstoy = test(i).pisoEstoy
 				report "salida incorrecta"
 				severity failure;
