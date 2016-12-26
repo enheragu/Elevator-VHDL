@@ -18,6 +18,8 @@
 		    \label{fig:BloqueIAscensorInterior}
 	\end{figure}
 	
+	Como se puede ver en la figura anterior hay ciertos bloques repetidos, como son el bloque CodificadorBinarioDecimal o el bloque Decodificador7s, se trata del mismo bloque utilizado dos veces, no de bloques diferentes, que se han representado por duplicado para mayor claridad. \\ 
+
 	Cada bloque se desgrana en los siguientes apartados.
 	
 
@@ -66,7 +68,7 @@
 		    \label{fig:BloquePisoActual}
 	\end{figure}
 	
-%	Se puede consultar el código VHDL de este módulo en el Apartado \ref{code:PisoActual} así como el código de su testbench correspondiente en el Apartado \ref{code:PisoActual_tb}.
+	Se puede consultar el código VHDL de este módulo en el Apartado \ref{code:PisoActual} así como el código de su testbench correspondiente en el Apartado \ref{code:PisoActual_tb}.
 
 \subsection{Bloque \textit{Bloqueador pisoVoy}:}
     
@@ -81,7 +83,10 @@
 		    \label{fig:BloqueBloqueadorPisoVoy}
 	\end{figure}
 	
-
+\subsection{Código Bloque \textit{Decodificador Binario a Decimal}:} 
+	En este bloque se traduce la señal binaria que codifica tanto el piso actual como el piso de destino a decimal para su posterior comparación.
+	Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\ 
+	
 \subsection{Bloque \textit{Comparador}:}
 
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueComparador}:

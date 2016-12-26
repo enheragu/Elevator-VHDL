@@ -11,10 +11,10 @@
 \subsection{Código Bloque \textit{Controlador Puerta (testbench)}:} \label{code:ControladorPuerta_tb}
 
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador.vhd}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
 
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos (testbench)}:} \label{code:Decodificador7s_tb}
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador_tb.vhd}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s_tb.vhd}
 
 \subsection{Código Bloque \textit{Divisor de frecuencia}:} \label{code:DivisorFrecuencia}
 
@@ -30,30 +30,41 @@
 
 \subsection{Código Bloque \textit{Comportamiento Interno (testbench)}:} \label{code:ComportamientoInterno_tb}
 
-\subsection{Código Bloque \textit{Bloqueador pisoVoy}:} \label{code:BloqueadorpisoVoy}
+\subsection{Código Bloque \textit{Bloqueador pisoVoy}:} \label{code:BloqueadorpisoVoy}	
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/BloqueadorpisoVoy.vhd}
 
 \subsection{Código Bloque \textit{Bloqueador pisoVoy (testbench)}:} \label{code:BloqueadorpisoVoy_tb}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/BloqueadorpisoVoy_tb.vhd}
 
-\subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{code:DecodificadorBinarioEntero}
-    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero.vhd}
-    
-    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el quepretendía.
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionBloqueadorPisoVoy}):
+
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 1\textwidth ]{BloqueDecodificadorBinarioEnteroOK}
-		    \caption{Salida en los displays de 7 segmentos}
-		    \label{fig:BloqueDecodificadorBinarioEnteroOK}
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionBloqueadorPisoVoy}
+		    \caption{Simulación del testbench del bloque BloqueadorPisoVoy}
+		    \label{fig:SimulacionBloqueadorPisoVoy}
 	\end{figure}
-    Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+
+\subsection{Código Bloque \textit{Decodificador Binario a Decimal}:} \label{code:DecodificadorBinarioDecimal}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioDecimal.vhd}
+    
+    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el quepretendía.
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 1\textwidth ]{BloqueDecodificadorBinarioEnteroImplementacion}
+		    \includegraphics[width = 0.8\textwidth ]{BloqueDecodificadorBinarioDecimalOK}
 		    \caption{Salida en los displays de 7 segmentos}
-		    \label{fig:BloqueDecodificadorBinarioEnteroImplementacion}
+		    \label{fig:BloqueDecodificadorBinarioDecimalOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{BloqueDecodificadorBinarioDecimalImplementacion}
+		    \caption{Salida en los displays de 7 segmentos}
+		    \label{fig:BloqueDecodificadorBinarioDecimalImplementacion}
 	\end{figure}
     
-\subsection{Código Bloque \textit{Decodificador Binario a Entero (testbench)}:} \label{code:DecodificadorBinarioEntero_tb}
-    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero_tb.vhd}
+\subsection{Código Bloque \textit{Decodificador Binario a Decimal (testbench)}:} \label{code:DecodificadorBinarioDecimal_tb}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioDecimal_tb.vhd}
     
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador.vhd}	
