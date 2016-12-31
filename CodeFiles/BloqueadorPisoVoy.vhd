@@ -22,11 +22,13 @@ begin
 
 	process (SensorVoy)
 	begin
-		if (rising_edge(SensorVoy(0)) or rising_edge(SensorVoy(1)) or rising_edge(SensorVoy(2)) or rising_edge(SensorVoy(3))) and Motor = "00" then
-			boton <= sensorVoy;
-		else 
-			boton <= boton;
-		end if;	
+		for i in 0 to (numPisos-1) loop
+			if ((SensorVoy(i)'event and SensorVoy(i) = '1' and SensorVoy(i)'last_value = '0') and Motor = "00") then
+				boton <= SensorVoy;
+			else 
+				boton <= boton;
+			end if;	
+		end loop;
 	end process;
 
 	PisoVoy <= boton;
