@@ -32,19 +32,19 @@ ARCHITECTURE behavior OF BloqueadorPisoVoy_tb IS
 	type vtest_vector is array (natural range <>) of vtest;
 	
 	constant test: vtest_vector := (
-												(Motor => "00", SensorVoy => "0000", PisoVoy => "0000"),
-												(Motor => "00", SensorVoy => "0001", PisoVoy => "0001"),
-												(Motor => "01", SensorVoy => "0001", PisoVoy => "0001"),
-												(Motor => "01", SensorVoy => "1000", PisoVoy => "0001"),
-												(Motor => "01", SensorVoy => "0100", PisoVoy => "0001"),
-												(Motor => "00", SensorVoy => "0100", PisoVoy => "0001"),
-												(Motor => "00", SensorVoy => "1000", PisoVoy => "1000"),
-												(Motor => "10", SensorVoy => "1000", PisoVoy => "1000"),
-												(Motor => "10", SensorVoy => "0010", PisoVoy => "1000"),
-												(Motor => "10", SensorVoy => "0100", PisoVoy => "1000"),
-												(Motor => "00", SensorVoy => "0100", PisoVoy => "1000"),
-												(Motor => "00", SensorVoy => "0010", PisoVoy => "0010")
-												);
+				(Motor => "00", SensorVoy => "0000", PisoVoy => "0000"),
+				(Motor => "00", SensorVoy => "0001", PisoVoy => "0001"),
+				(Motor => "01", SensorVoy => "0001", PisoVoy => "0001"),
+				(Motor => "01", SensorVoy => "1000", PisoVoy => "0001"),
+				(Motor => "01", SensorVoy => "0100", PisoVoy => "0001"),
+				(Motor => "00", SensorVoy => "0100", PisoVoy => "0001"),
+				(Motor => "00", SensorVoy => "1000", PisoVoy => "1000"),
+				(Motor => "10", SensorVoy => "1000", PisoVoy => "1000"),
+				(Motor => "10", SensorVoy => "0010", PisoVoy => "1000"),
+				(Motor => "10", SensorVoy => "0100", PisoVoy => "1000"),
+				(Motor => "00", SensorVoy => "0100", PisoVoy => "1000"),
+				(Motor => "00", SensorVoy => "0010", PisoVoy => "0010")
+				);
 
 BEGIN
  
@@ -60,13 +60,13 @@ BEGIN
    begin		
 		
 		for i in 0 to test'high loop
-											Motor <= test(i).Motor;
-											SensorVoy <= test(i).SensorVoy;
-											wait for 20 ns;
-											assert PisoVoy = test(i).PisoVoy
-												report "salida incorrecta"
-												severity failure;
-											end loop;
+				Motor <= test(i).Motor;
+				SensorVoy <= test(i).SensorVoy;
+				wait for 20 ns;
+				assert PisoVoy = test(i).PisoVoy
+					report "salida incorrecta"
+					severity failure;
+				end loop;
 		
       assert false
 			report "fin de la simulación"
