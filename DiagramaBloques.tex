@@ -1,27 +1,61 @@
-\subsection{Bloque \textit{Acensor}:}
+\subsection{Entidad \textit{Acensor}:}
     
-    La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueIAscensor}:
+    La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:EntidadIAscensor}:
     
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.8\textwidth ]{BloqueAscensor}
+		    \includegraphics[width = 0.8\textwidth ]{EntidadAscensor}
 		    \caption{Diagrama Interfaz Bloque PisoActual}
-		    \label{fig:BloqueIAscensor}
+		    \label{fig:EntidadIAscensor}
 	\end{figure}
 	
 	Esta es una entidad de alto nivel que encapsula todo el funcionamiento del ascensor. Se puede ver el diagrama de bloques interno de esta entidad en la siguiente figura: 
 	
 	\begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 1\textwidth ]{BloqueAscensorInterior}
+		    \includegraphics[width = 1\textwidth ]{EntidadAscensorEntidades}
 		    \caption{Diagrama interno del Bloque PisoActual}
-		    \label{fig:BloqueIAscensorInterior}
+		    \label{fig:EntidadIAscensorInterior}
 	\end{figure}
 	
-	Como se puede ver en la figura anterior hay ciertos bloques repetidos, como son el bloque CodificadorBinarioDecimal o el bloque Decodificador7s, se trata del mismo bloque utilizado dos veces, no de bloques diferentes, que se han representado por duplicado para mayor claridad. \\ 
+	Como se puede ver en la figura anterior se han encapsulado los bloques en diferentes entidades en función de su finalidad, estas entidades se pueden ver a continuación. En las representaciones de estas entidades se verá que hay ciertos bloques repetidos, se trata del mismo bloque utilizado dos veces, no de bloques diferentes, que se han representado por duplicado para mayor claridad. \\ 
 
-	Cada bloque se desgrana en los siguientes apartados.
-	
+\subsection{Entidad \textit{Interfaz Entrada}:}
+	Esta entidad se encarga de gestionar los datos de las entradas para adaptarlos al funcionamiento interno de nuestro sistema, en este caso se encarga de codificar y modular correctamente las señales de los sensores del piso al que voy y del piso en que estoy. \\ 
+
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE1}), engloba dos bloques, que se desgran en los siguientes apartados.
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{EntidadAscensorInterior(E1)}
+		    \caption{Representación de la Entidad Interfaz Entrada}
+		    \label{fig:EntidadesAscensorE1}
+	\end{figure}
+
+\subsection{Entidad \textit{Control Ascensor}:}
+	Esta entidad se encarga de gestionar el funcionamiento del ascensor propiamente dicho comparando las lecturas de los sensores y decidiendo que deben hacer los actuadores, el motor y la puerta.  \\ 
+
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE3}), engloba tres bloques, que se explican más adelante.
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{EntidadAscensorInterior(E3)}
+		    \caption{Representación de la Entidad Control Ascensor}
+		    \label{fig:EntidadesAscensorE3}
+	\end{figure}
+
+	Como se puede observar el bloque Codigicador Binario-Decimal se utiliza dos veces.
+
+\subsection{Entidad \textit{Visualizacion}:}	
+	Esta entidad se encarga de gestionar el funcionamiento del ascensor propiamente dicho comparando las lecturas de los sensores y decidiendo que deben hacer los actuadores, el motor y la puerta.  \\ 
+
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE2}), engloba cuatro bloques bloques, que se detallan en apartados posteriores.
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 1\textwidth ]{EntidadAscensorInterior(E2)}
+		    \caption{Representación de la Entidad Visualizacion}
+		    \label{fig:EntidadesAscensorE2}
+	\end{figure}
+
+	Como se puede observar el bloque Decodificador7s y el bloque DivisorFrecuencia se utilizan dos veces cada uno.
 
 \subsection{Bloque \textit{Controlador Motor}:}
     Este bloque se encarga de controlar el motor. En la entrada recibe dos bits con la codificación que se muestra en el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y los gestiona para modelar y simular con los recursos de la placa el movimiento del mismo.
