@@ -12,33 +12,33 @@ ARCHITECTURE behavior OF PisoActual_tb IS
  
     COMPONENT PisoActual
     PORT(
-         sensorEstoy : IN  std_logic_vector(3 downto 0);
-         pisoEstoy : OUT  std_logic_vector(3 downto 0)
+         SensorEstoy : IN  std_logic_vector(3 downto 0);
+         PisoEstoy : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal sensorEstoy : std_logic_vector(3 downto 0);
+   signal SensorEstoy : std_logic_vector(3 downto 0);
 
  	--Outputs
-   signal pisoEstoy : std_logic_vector(6 downto 0);
+   signal PisoEstoy : std_logic_vector(6 downto 0);
 	
 	type vtest is record 
-			sensorEstoy : std_logic_vector(3 downto 0);
-			pisoEstoy : std_logic_vector(3 downto 0);
+			SensorEstoy : std_logic_vector(3 downto 0);
+			PisoEstoy : std_logic_vector(3 downto 0);
 	end record;
 	
 	type vtest_vector is array (natural range <>) of vtest;
  
-   constatnt test: vtest_vector := ( 
+   constant test: vtest_vector := ( 
 				 (sensorEstoy => "0000", pisoEstoy => "0000"), 
 				 (sensorEstoy => "0001", pisoEstoy => "0001"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
+				 (sensorEstoy => "0000", pisoEstoy => "0001"),
 				 (sensorEstoy => "0010", pisoEstoy => "0010"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
+				 (sensorEstoy => "0000", pisoEstoy => "0010"),
 				 (sensorEstoy => "0100", pisoEstoy => "0100"),
-				 (sensorEstoy => "0000", pisoEstoy => "0000"),
+				 (sensorEstoy => "0000", pisoEstoy => "0100"),
 				 (sensorEstoy => "1000", pisoEstoy => "1000")		 
 	);
  
@@ -46,19 +46,17 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: PisoActual PORT MAP (
-          sensorEstoy => sensorEstoy,
-          pisoEstoy => pisoEstoy
+          SensorEstoy => SensorEstoy,
+          PisoEstoy => PisoEstoy
         );
 
 	tb: process
 	
 	begin
 		for i in 0 to test'high loop
-			sensorEstoy <= test(i).sensorEstoy;
+			SensorEstoy <= test(i).SensorEstoy;
 			wait for 20 ns;
-			if (test(i).sensorEstoy = "0000") then
-				assert pisoEstoy = test(i-1).sensorEstoy;
-			assert pisoEstoy = test(i).pisoEstoy
+			assert PisoEstoy = test(i).PisoEstoy
 				report "salida incorrecta"
 				severity failure;
 		end loop;
