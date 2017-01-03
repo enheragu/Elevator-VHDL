@@ -2,9 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Comparador is
-    Port ( 	PisoVoy : in  INTEGER;
+    Port ( 	
+			PisoVoy : in  INTEGER;
 			PisoEstoy : in  INTEGER;
-           	ControlMotor : out STD_LOGIC_VECTOR(1 downto 0)
+         ControlMotor : out STD_LOGIC_VECTOR(1 downto 0)
 			  ); 
 end Comparador; 
 

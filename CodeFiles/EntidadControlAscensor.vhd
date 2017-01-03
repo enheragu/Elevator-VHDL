@@ -4,12 +4,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity EntidadControlAscensor is
     Port ( PisoVoy : in  STD_LOGIC_VECTOR (3 downto 0);
            PisoEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
-           ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0);
+           ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
+			  );
 end EntidadControlAscensor;
 
 architecture Behavioral of EntidadControlAscensor is
 
-	signal SigPisoVoy, SigPisoEstoy : INTEGER;
 
 	component DecodificadorBinarioDecimal 
 	port (
@@ -22,25 +22,28 @@ architecture Behavioral of EntidadControlAscensor is
 	port (
 			PisoVoy: in INTEGER;
 			PisoEstoy: INTEGER;
-			ControlMotor : out  STD_LOGIC_VECTOR (2 downto 0)
+			ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
 			);
 	end component;
-
+	
+	--signal declaration
+	signal SigPisoVoy, SigPisoEstoy : INTEGER;
+	
 begin
 
 	Inst_decodificadorVoy: DecodificadorBinarioDecimal port map (
-		PisoVoy => EntradaBinaria, 
-		SalidaEntera=> SigPisoVoy	
+		EntradaBinaria => PisoVoy, 
+		SalidaEntera => SigPisoVoy  	
 	);
 
 	Inst_decodificadorEstoy: DecodificadorBinarioDecimal port map (
-		PisoEstoy => EntradaBinaria, 
-		SalidaEntera => SigPisoEstoy	
+		EntradaBinaria => PisoEstoy, 
+		SalidaEntera => SigPisoEstoy
 	);
 	
-	Inst_Compoarador: Comparador port map (
-		SigPisoVoy => PisoVoy,
-		SigPisoEstoy => PisoEstoy, 	
+	Inst_Comparador: Comparador port map (
+		PisoVoy => SigPisoVoy,
+		PisoEstoy => SigPisoEstoy, 	
 		ControlMotor => ControlMotor
 	);
 
