@@ -1,23 +1,3 @@
-\subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
-
-\subsection{Código Código Entidad \textit{Acensor (testbench)}:} \label{code:Acensor_tb}
-
-\subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
-
-\subsection{Código Entidad \textit{Control Ascensor}:} \label{code:ControlAscensor}
-
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor.vhd}
-
-\subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
-
-\subsection{Código Bloque \textit{Controlador Motor}:} \label{code:ControladorMotor}
-
-\subsection{Código Bloque \textit{Controlador Motor (testbench)}:} \label{code:ControladorMotor_tb}
-
-\subsection{Código Bloque \textit{Controlador Puerta}:} \label{code:ControladorPuerta}
-
-\subsection{Código Bloque \textit{Controlador Puerta (testbench)}:} \label{code:ControladorPuerta_tb}
-
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
 
@@ -66,18 +46,18 @@
 \subsection{Código Bloque \textit{Decodificador Binario a Decimal}:} \label{code:DecodificadorBinarioDecimal}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioDecimal.vhd}
     
-    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el quepretendía.
+    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.6\textwidth ]{BloqueDecodificadorBinarioDecimalOK}
-		    \caption{Salida en los displays de 7 segmentos}
+		    \caption{Esquema exterior del bloque Decodificador Binario-Decimal}
 		    \label{fig:BloqueDecodificadorBinarioDecimalOK}
 	\end{figure}
     Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.85\textwidth ]{BloqueDecodificadorBinarioDecimalImplementacion}
-		    \caption{Salida en los displays de 7 segmentos}
+		    \caption{Esquema interno del bloque Decodificador Binario-Decimal}
 		    \label{fig:BloqueDecodificadorBinarioDecimalImplementacion}
 	\end{figure}
     
@@ -87,4 +67,58 @@
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador.vhd}	
 
+	Como se puede ver en la Figura (\ref{fig:BloqueComparadorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueComparadorOK}
+		    \caption{Esquema exterior del Bloque Comparador}
+		    \label{fig:BloqueComparadorOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueComparadorImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.85\textwidth ]{BloqueComparadorImplementacion}
+		    \caption{Esquema interno del Bloque Comparador}
+		    \label{fig:BloqueComparadorImplementacion}
+	\end{figure}
+
 \subsection{Código Bloque \textit{Comparador (testbench)}:} \label{code:Comparador_tb}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador_tb.vhd}
+
+
+\subsection{Código Bloque \textit{Controlador Motor}:} \label{code:ControladorMotor}
+
+\subsection{Código Bloque \textit{Controlador Motor (testbench)}:} \label{code:ControladorMotor_tb}
+
+\subsection{Código Bloque \textit{Controlador Puerta}:} \label{code:ControladorPuerta}
+
+\subsection{Código Bloque \textit{Controlador Puerta (testbench)}:} \label{code:ControladorPuerta_tb}
+
+\subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
+
+\subsection{Código Entidad \textit{Control Ascensor}:} \label{code:ControlAscensor}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor.vhd}
+
+	Como se puede ver en la Figura (\ref{fig:EntidadControlAscensor}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{EntidadControlAscensorOK}
+		    \caption{Esquema exterior de la Entidad ControlAscensor}
+		    \label{fig:EntidadControlAscensorOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:EntidadControlAscensorImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.85\textwidth ]{EntidadControlAscensorImplementacion}
+		    \caption{Esquema interno de la Entidad ControlAscensor}
+		    \label{fig:EntidadControlAscensorImplementacion}
+	\end{figure}
+
+\subsection{Código Entidad \textit{Control Ascensor (testbench)}:} \label{code:ControlAscensor_tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor_tb.vhd}
+
+\subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
+
+\subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
+
+\subsection{Código Código Entidad \textit{Acensor (testbench)}:} \label{code:Acensor_tb}
