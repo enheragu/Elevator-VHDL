@@ -119,8 +119,17 @@
     \section{Código:} \label{section:Codigo}
     
         \input{Codigo} %importa el fichero Codigo.tex
-        
+    
+    \section{Pruebas en placa y análisis de resultados:} \label{section:PruebasYResultados}
+
+    	\input{PruebasYResultados} %importa el fichero PruebasYResultados.tex
     
     \input{Apendices} %importa el fichero Apendices.tex
 
+    \newpage
+    \addcontentsline{toc}{section}{Índice de figuras} % para que aparezca en el indice de contenidos
+    \listoffigures
+    \addcontentsline{toc}{section}{Índice de tablas} % para que aparezca en el indice de contenidos
+	\listoftables
+	
 \end{document}
