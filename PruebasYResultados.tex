@@ -6,27 +6,15 @@ Como se puede ver en la figura los 4 displays comparten 8 pines de control, para
 
 \begin{table}[H]
         \centering
-		\begin{tabular}{|c|c|C|}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{3}{|c|}{  \textbf{ {Salidas físicas Display 7 segmentos}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{9}{|c|}{  \textbf{ {Salidas físicas Display 7 segmentos}}} \\
 			\hline \hline
-			\textbf{  Segmento  } & \textbf{  FPGA Pin  } & \multicolumn{8}{c}{Multi-column}\\
+			\textbf{  Segmento  } & A & B & C & D & E & F & G & DP \\ 
 			\hline
-			A & E14 \\
+			\textbf{  FPGA Pin  }  & E14 & G13 & N15 & P15 & R16 & F13 & N16 & P16 \\ 
 			\hline
-			B & G13 \\
-			\hline
-			C & N15 \\
-			\hline
-			D & P15 \\
-			\hline
-			E & R16 \\
-			\hline
-			F & F13 \\
-			\hline
-			G & N16 \\
-			\hline
-			DP & P16 \\
+			\multicolumn{9}{|c|}{\includegraphics[width = 0.8\textwidth ]{Spartan3-7segment}}\\
 			\hline
 			 
 		\end{tabular}
@@ -36,9 +24,9 @@ Como se puede ver en la figura los 4 displays comparten 8 pines de control, para
 
 \begin{table}[H]
         \centering
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{9}{|c|}{  \textbf{ {Entradas Pulsadores}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{5}{|c|}{  \textbf{ {Ánodos de control}}} \\
 			\hline \hline
 			\textbf{  Anodo Control  } & AN3 & AN2 & AN1 & AN0  \\
 			\hline
@@ -72,9 +60,9 @@ Los pines de entrada correspondientes a los \textbf{pulsadores} se pueden ver en
 
 \begin{table}[H]
         \centering
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{9}{|c|}{  \textbf{ {Entradas Pulsadores}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{5}{|c|}{  \textbf{ {Entradas Pulsadores}}} \\
 			\hline \hline
 			\textbf{  Pulsador  } & BTN3 (Reset) & BTN2 & BTN1 & BTN0  \\
 			\hline
