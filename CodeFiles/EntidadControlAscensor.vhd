@@ -11,7 +11,7 @@ end EntidadControlAscensor;
 architecture Behavioral of EntidadControlAscensor is
 
 
-	component DecodificadorBinarioDecimal 
+	component DecodificadorBinarioEntero 
 	port (
 			EntradaBinaria: in std_logic_vector (3 downto 0);
 			SalidaEntera : out  INTEGER
@@ -21,7 +21,7 @@ architecture Behavioral of EntidadControlAscensor is
 	component Comparador
 	port (
 			PisoVoy: in INTEGER;
-			PisoEstoy: INTEGER;
+			PisoEstoy: in INTEGER;
 			ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
 			);
 	end component;
@@ -31,12 +31,12 @@ architecture Behavioral of EntidadControlAscensor is
 	
 begin
 
-	Inst_decodificadorVoy: DecodificadorBinarioDecimal port map (
+	Inst_decodificadorVoy: DecodificadorBinarioEntero port map (
 		EntradaBinaria => PisoVoy, 
 		SalidaEntera => SigPisoVoy  	
 	);
 
-	Inst_decodificadorEstoy: DecodificadorBinarioDecimal port map (
+	Inst_decodificadorEstoy: DecodificadorBinarioEntero port map (
 		EntradaBinaria => PisoEstoy, 
 		SalidaEntera => SigPisoEstoy
 	);

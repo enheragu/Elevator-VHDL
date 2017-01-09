@@ -67,27 +67,36 @@
 		    \label{fig:SimulacionBloqueadorPisoVoy}
 	\end{figure}
 
-\subsection{Código Bloque \textit{Decodificador Binario a Decimal}:} \label{code:DecodificadorBinarioDecimal}
-    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioDecimal.vhd}
+\subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{code:DecodificadorBinarioEntero}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero.vhd}
     
-    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.6\textwidth ]{BloqueDecodificadorBinarioDecimalOK}
-		    \caption{Esquema exterior del bloque Decodificador Binario-Decimal}
-		    \label{fig:BloqueDecodificadorBinarioDecimalOK}
+		    \includegraphics[width = 0.6\textwidth ]{BloqueDecodificadorBinarioEnteroOK}
+		    \caption{Esquema exterior del bloque Decodificador Binario-Entero}
+		    \label{fig:BloqueDecodificadorBinarioEnteroOK}
 	\end{figure}
-    Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioDecimalImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    Además podemos ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.9\textwidth ]{BloqueDecodificadorBinarioDecimalImplementacion}
-		    \caption{Esquema interno del bloque Decodificador Binario-Decimal}
-		    \label{fig:BloqueDecodificadorBinarioDecimalImplementacion}
+		    \includegraphics[width = 0.9\textwidth ]{BloqueDecodificadorBinarioEnteroImplementacion}
+		    \caption{Esquema interno del bloque Decodificador Binario-Entero}
+		    \label{fig:BloqueDecodificadorBinarioEnteroImplementacion}
 	\end{figure}
     
-\subsection{Código Bloque \textit{Decodificador Binario a Decimal (testbench)}:} \label{code:DecodificadorBinarioDecimal_tb}
-    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioDecimal_tb.vhd}
-    
+\subsection{Código Bloque \textit{Decodificador Binario a Entero (testbench)}:} \label{code:DecodificadorBinarioEntero_tb}
+    \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionDecodificadorBinarioEntero}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionDecodificadorBinarioEntero}
+		    \caption{Simulación del testbench del bloque DecodificadorBinarioEntero}
+		    \label{fig:SimulacionDecodificadorBinarioEntero}
+	\end{figure}
+
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador.vhd}	
 
@@ -109,6 +118,14 @@
 \subsection{Código Bloque \textit{Comparador (testbench)}:} \label{code:Comparador_tb}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador_tb.vhd}
 
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionComparador}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionComparador}
+		    \caption{Simulación del testbench del bloque Comparador}
+		    \label{fig:SimulacionComparador}
+	\end{figure}
 
 \subsection{Código Bloque \textit{Controlador Motor}:} \label{code:ControladorMotor}
 
@@ -140,6 +157,15 @@
 
 \subsection{Código Entidad \textit{Control Ascensor (testbench)}:} \label{code:ControlAscensor_tb}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadControlAscensor}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionEntidadControlAscensor}
+		    \caption{Simulación del testbench de la entidad ControlAscensor}
+		    \label{fig:SimulacionEntidadControlAscensor}
+	\end{figure}
 
 \subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
 
