@@ -48,12 +48,23 @@
 		    \label{fig:SimulacionPisoActual}
 	\end{figure}
 
-\subsection{Código Bloque \textit{Comportamiento Interno}:} \label{code:ComportamientoInterno}
-
-\subsection{Código Bloque \textit{Comportamiento Interno (testbench)}:} \label{code:ComportamientoInterno_tb}
 
 \subsection{Código Bloque \textit{Bloqueador PisoVoy}:} \label{code:BloqueadorpisoVoy}	
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/BloqueadorPisoVoy.vhd}
+	Como se puede ver en la Figura (\ref{fig:BloqueBloqueadorPisoVoyOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueBloqueadorPisoVoyOK}
+		    \caption{Esquema exterior del bloque Bloqueador PisoVoy}
+		    \label{fig:BloqueBloqueadorPisoVoyOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueBloqueadorPisoVoyImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{BloqueBloqueadorPisoVoyImplementacion}
+		    \caption{Esquema interno del bloque Bloqueador PisoVoy}
+		    \label{fig:BloqueBloqueadorPisoVoyImplementacion}
+	\end{figure}
 
 \subsection{Código Bloque \textit{Bloqueador PisoVoy (testbench)}:} \label{code:BloqueadorpisoVoy_tb}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/BloqueadorPisoVoy_tb.vhd}
