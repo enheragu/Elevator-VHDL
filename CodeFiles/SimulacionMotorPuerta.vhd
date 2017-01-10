@@ -26,18 +26,20 @@ end SimulacionMotorPuerta;
 architecture Behavioral of SimulacionMotorPuerta is
 
 begin
-	proces (ControlMotor)
-
+	process (ControlMotor)
+	begin
 		case ControlMotor is
 			when "00" =>
-				ControlMotor7s <= "0000001"
-				ControlPuerta7s <= "1110111"
+				ControlMotor7s <= "0000001";
+				ControlPuerta7s <= "1110111";
 			when "01" =>
-				ControlMotor7s <= "1011011"
-				ControlPuerta7s <= "1001110"
+				ControlMotor7s <= "1011011";
+				ControlPuerta7s <= "1001110";
 			when "10" =>
-				ControlMotor7s <= "1111111"
-				ControlPuerta7s <= "1001110"
+				ControlMotor7s <= "1111111";
+				ControlPuerta7s <= "1001110";
+			when others =>
+				
  		end case;
- 	end proces;
+ 	end process;
 end Behavioral;
