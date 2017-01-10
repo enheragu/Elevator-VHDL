@@ -136,6 +136,34 @@
 \subsection{Código Bloque \textit{Controlador Puerta (testbench)}:} \label{code:ControladorPuerta_tb}
 
 \subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
+
+	Como se puede ver en la Figura (\ref{fig:EntidadInterfazEntradaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{EntidadInterfazEntradaOK}
+		    \caption{Esquema exterior de la Entidad InterfazEntrada}
+		    \label{fig:EntidadInterfazEntradaOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:EntidadInterfazEntradaImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{EntidadInterfazEntradaImplementacion}
+		    \caption{Esquema interno de la Entidad InterfazEntrada}
+		    \label{fig:EntidadInterfazEntradaImplementacion}
+	\end{figure}
+
+\subsection{Código Entidad \textit{Interfaz Entrada (testbench)}:} \label{code:InterfazEntrada_tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadInterfazEntrada}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionEntidadInterfazEntrada}
+		    \caption{Simulación del testbench de la entidad InterfazEntrada}
+		    \label{fig:SimulacionEntidadInterfazEntrada}
+	\end{figure}
 
 \subsection{Código Entidad \textit{Control Ascensor}:} \label{code:ControlAscensor}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor.vhd}
