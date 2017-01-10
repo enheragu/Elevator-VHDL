@@ -1,14 +1,26 @@
+-------------------------------------------------------------------------------
+-- Title : Entidad Interfaz Entrada (tb)
+-- Project : Elevator-VHDL
+-------------------------------------------------------------------------------
+-- File : EntidadInterfazEntrada_tb.vhd
+-- Author : AranchaCM
+-- Created : 2017/01/09
+-- Last modified : 2017/01/09
+-------------------------------------------------------------------------------
+-- Description :
+-- Implements athe testbench of EntidadInterfazEntrada.vhd
+-------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
   
-ENTITY InterfazEntrada_tb IS
-END InterfazEntrada_tb;
+ENTITY EntidadInterfazEntrada_tb IS
+END EntidadInterfazEntrada_tb;
  
-ARCHITECTURE behavior OF InterfazEntrada_tb IS 
+ARCHITECTURE behavior OF EntidadInterfazEntrada_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT InterfazEntrada
+    COMPONENT EntidadInterfazEntrada
     PORT(
          SensorVoy : IN  std_logic_vector(3 downto 0);
          SensorEstoy : IN  std_logic_vector(3 downto 0);
