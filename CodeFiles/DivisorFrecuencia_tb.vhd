@@ -12,7 +12,7 @@ ARCHITECTURE behavior OF DivisorFrecuencia_tb IS
 			  PisoVoy   : out STD_LOGIC
         );
     END COMPONENT;
-	-- SEÑALES
+	-- SEÃ‘ALES
 	-- Entradas
     signal PisoVoy7s : std_logic := '0'; -- asignamos valor inicial
     signal reset   : std_logic := '0';
@@ -44,7 +44,7 @@ BEGIN
    begin		
 		  reset <= '1'; -- Condiciones iniciales.
         wait for 500 ns;
-        reset <= '0'; -- ¡A trabajar!
+        reset <= '0'; 
         wait; 
    end process;
 
