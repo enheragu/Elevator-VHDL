@@ -5,7 +5,7 @@
 -- File : BloqueadorPisoVoy_tb.vhd
 -- Author : AranchaCM
 -- Created : 2016/12/26
--- Last modified : 2016/12/26
+-- Last modified : 2017/01/10
 -------------------------------------------------------------------------------
 -- Description :
 -- Implements athe testbench of BloqueadorPisoVoy.vhd
@@ -49,12 +49,10 @@ ARCHITECTURE behavior OF BloqueadorPisoVoy_tb IS
 				(Motor => "01", SensorVoy => "0001", PisoVoy => "0001"),
 				(Motor => "01", SensorVoy => "1000", PisoVoy => "0001"),
 				(Motor => "01", SensorVoy => "0100", PisoVoy => "0001"),
-				(Motor => "00", SensorVoy => "0100", PisoVoy => "0001"),
 				(Motor => "00", SensorVoy => "1000", PisoVoy => "1000"),
 				(Motor => "10", SensorVoy => "1000", PisoVoy => "1000"),
 				(Motor => "10", SensorVoy => "0010", PisoVoy => "1000"),
 				(Motor => "10", SensorVoy => "0100", PisoVoy => "1000"),
-				(Motor => "00", SensorVoy => "0100", PisoVoy => "1000"),
 				(Motor => "00", SensorVoy => "0010", PisoVoy => "0010")
 				);
 

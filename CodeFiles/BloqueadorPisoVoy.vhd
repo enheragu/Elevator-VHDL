@@ -5,7 +5,7 @@
 -- File : BloqueadorPisoVoy.vhd
 -- Author : AranchaCM
 -- Created : 2016/12/26
--- Last modified : 2016/12/30
+-- Last modified : 2017/01/10
 -------------------------------------------------------------------------------
 -- Description :
 -- Implements the filter of the buttons
@@ -32,15 +32,17 @@ signal boton: STD_LOGIC_VECTOR (PisoVoy'range) := (others=>'0');
 
 begin
 
-	process (SensorVoy)
+	process (SensorVoy, Motor)
 	begin
-		for i in 0 to (numPisos-1) loop
-			if ((SensorVoy(i)'event and SensorVoy(i) = '1' and SensorVoy(i)'last_value = '0') and Motor = "00") then
+		if Motor = "00" then
+			if SensorVoy /= "0000" then
 				boton <= SensorVoy;
-			else 
+			else
 				boton <= boton;
-			end if;	
-		end loop;
+			end if;
+		else
+			boton <= boton;
+		end if;
 	end process;
 
 	PisoVoy <= boton;
