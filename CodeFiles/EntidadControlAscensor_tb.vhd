@@ -1,3 +1,16 @@
+ -------------------------------------------------------------------------------
+ -- Title : Entidad Control Ascensor (tb)
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : EntidadControlAScensor_tb.vhd
+ -- Author : EnriqueHE
+ -- Created : 2017/01/03
+ -- Last modified : 2017/01/03
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the testbench of EntidadControlAScensor.vhd
+ -------------------------------------------------------------------------------
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;

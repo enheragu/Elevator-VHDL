@@ -1,3 +1,18 @@
+ -------------------------------------------------------------------------------
+ -- Title : Entidad Control Ascensor
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : EntidadControlAScensor.vhd
+ -- Author : EnriqueHE
+ -- Created : 2017/01/03
+ -- Last modified : 2017/01/09
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the top entity which coordinates DecodificadorBinarioEntero.vhd 
+ -- and Comparador.vhd
+ -------------------------------------------------------------------------------
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

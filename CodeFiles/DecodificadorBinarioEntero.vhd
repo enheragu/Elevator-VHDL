@@ -1,3 +1,16 @@
+ -------------------------------------------------------------------------------
+ -- Title : Decodificador Binario Entero
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : DecodificadorBinarioEntero.vhd
+ -- Author : Arancha CM, AlbertoBB, EnriqueHE
+ -- Created : 2016/12/26
+ -- Last modified : 2016/12/31
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements a dcimal binary decoder
+ -------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

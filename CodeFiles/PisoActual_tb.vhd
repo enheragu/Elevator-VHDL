@@ -1,3 +1,16 @@
+ -------------------------------------------------------------------------------
+ -- Title : Piso Actual (tb)
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : PisoActual_tb.vhd
+ -- Author : EnriqueHE
+ -- Created : 2016/12/26
+ -- Last modified : 2017/01/03 (by AranchaCM)
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the testbench of PisoActual.vhd
+ -------------------------------------------------------------------------------
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;

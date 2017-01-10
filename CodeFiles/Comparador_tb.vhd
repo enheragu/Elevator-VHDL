@@ -1,3 +1,16 @@
+ -------------------------------------------------------------------------------
+ -- Title : Comparador_tb
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : Comparador_tb.vhd
+ -- Author : EnriqueHE
+ -- Created : 2017/01/03
+ -- Last modified : 2017/01/03
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the testbench of Comparador.vhd
+ -------------------------------------------------------------------------------
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;

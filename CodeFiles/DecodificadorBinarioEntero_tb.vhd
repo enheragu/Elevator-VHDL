@@ -1,3 +1,16 @@
+ -------------------------------------------------------------------------------
+ -- Title : Decodificador Binario Entero (tb)
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : DecodificadorBinarioEntero_tb.vhd
+ -- Author : Arancha CM, AlbertoBB, EnriqueHE
+ -- Created : 2016/12/26
+ -- Last modified : 2016/12/26
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements athe testbench of DecodificadorBinarioEntero.vhd
+ -------------------------------------------------------------------------------
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;

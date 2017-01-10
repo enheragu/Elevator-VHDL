@@ -1,3 +1,17 @@
+ -------------------------------------------------------------------------------
+ -- Title : Comparador
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : Comparador.vhd
+ -- Author : Arancha CM, AlbertoBB, EnriqueHE
+ -- Created : 2016/12/26
+ -- Last modified : 2017/01/03
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements an integer comparator. Has 2 inputs (integer values) and a
+ -- two bit output (engine operation)
+ -------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -15,12 +29,12 @@ begin
 	process (PisoEstoy, PisoVoy)
 	begin
 		IF PisoVoy = PisoEstoy THEN
-			ControlMotor <= "00";
+			ControlMotor <= "00"; -- engine stopped
 			
 		ELSIF PisoVoy > PisoEstoy THEN
-			ControlMotor <= "01";
+			ControlMotor <= "01"; -- rising
 			
-		ELSE ControlMotor <= "10";
+		ELSE ControlMotor <= "10"; -- descending
 		end if;
 	END process;
 end Behavioral;
