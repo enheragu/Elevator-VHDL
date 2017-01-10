@@ -138,13 +138,34 @@
 		    \label{fig:SimulacionComparador}
 	\end{figure}
 
-\subsection{Código Bloque \textit{Controlador Motor}:} \label{code:ControladorMotor}
+\subsection{Código Bloque \textit{ Simulacion Motor Puerta}:} \label{code:MotorPuerta}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
 
-\subsection{Código Bloque \textit{Controlador Motor (testbench)}:} \label{code:ControladorMotor_tb}
+	Como se puede ver en la Figura (\ref{fig:MotorPuertaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{MotorPuertaOK}
+		    \caption{Esquema exterior del simulador Motor Puerta}
+		    \label{fig:MotorPuertaOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:MotorPuertaImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{MotorPuertaImplementacion}
+		    \caption{Esquema interno del simulador Motor Puerta}
+		    \label{fig:MotorPuertaImplementacion}
+	\end{figure}
+\subsection{Código Bloque \textit{Simulacion Motor Puerta (testbench)}:} \label{code:MotorPuerta_tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada_tb.vhd}
 
-\subsection{Código Bloque \textit{Controlador Puerta}:} \label{code:ControladorPuerta}
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionMotorPuerta}):
 
-\subsection{Código Bloque \textit{Controlador Puerta (testbench)}:} \label{code:ControladorPuerta_tb}
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionMotorPuerta}
+		    \caption{Simulación del testbench del simulador MotorPuerta}
+		    \label{fig:SimulacionMotorPuerta}
+	\end{figure}
 
 \subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
