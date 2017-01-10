@@ -66,11 +66,6 @@
 
 	Como se puede observar el bloque Decodificador7s y el bloque DivisorFrecuencia se utilizan dos veces cada uno.
 
-\subsection{Bloque \textit{Controlador Motor}:}
-    Este bloque se encarga de controlar el motor. En la entrada recibe dos bits con la codificación que se muestra en el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y los gestiona para modelar y simular con los recursos de la placa el movimiento del mismo.
-    
-\subsection{Bloque \textit{Controlador Puerta}:}
-    Este bloque se encarga del control de la puerta del ascensor. En la entrada recibe un bit con la codificación que se muestra en el Cuadro (\ref{tab:tabla3ApendiceA}) del Apéndice \ref{app:codEntSal} que indica si la puerta está abierta o cerrada; este bloque actua como interfaz entre esa codificación y el modelo real, en este caso se simulará con los recursos disponibles en la placa.
 
 \subsection{Bloque \textit{Decodificador a 7 segmentos}:}
     Este bloque es el encargado de traducir el piso en el que se encuentra el ascensor y el piso objetivo para poder mostrarlo en el display de 7 segmentos. Para ello es importante recordar el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifica internamente el número de piso. \\ 
@@ -140,3 +135,33 @@
 		    \caption{Diagrama Bloque Comparador}
 		    \label{fig:BloqueComparador}
 	\end{figure}
+
+
+
+\subsection{Bloque \textit{Controlador Motor} y \textit{Controlador Puerta}:}
+    El bloque Controlador Motor se encarga de controlar el motor. En la entrada recibe dos bits con la codificación que se muestra en el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y los gestiona para modelar y simular con los recursos de la placa el movimiento del mismo.
+
+    El bloque Controlador Puerta se encarga del control de la puerta del ascensor. En la entrada recibe un bit con la codificación que se muestra en el Cuadro (\ref{tab:tabla3ApendiceA}) del Apéndice \ref{app:codEntSal} que indica si la puerta está abierta o cerrada; este bloque actua como interfaz entre esa codificación y el modelo real, en este caso se simulará con los recursos disponibles en la placa.
+
+    En este caso no tenemos ni puerta ni motor físico así que se ha decidido sacar la "reacción" que tendrían estos elementos por dos de los display de 7 segmentos de que se dispone, de esta forma se podrá ver en los displays los siguientes caracteres:
+
+	\begin{table}[H]
+        \centering
+			\begin{tabular}{|c|c||c|c|}
+				\hline
+				\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{2}{|c|}{  \textbf{ {Funcionamiento Motor}}} & \multicolumn{2}{|c|}{  \textbf{ {Funcionamiento Puerta}}} \\
+				\hline \hline
+				 & \textbf{ Codificación Interna }  & \textbf{ Codificación Interna }  \\
+				\hline
+				Subiendo & \includegraphics[width = 0.8\textwidth ]{CodCaracteres7s/subida}} & Abierta & \includegraphics[width = 0.8\textwidth ]{CodCaracteres7s/abierta}}  \\
+				\hline
+				Bajando & \includegraphics[width = 0.8\textwidth ]{CodCaracteres7s/bajada}} & Cerrada & \includegraphics[width = 0.8\textwidth ]{CodCaracteres7s/cerrada}}  \\
+				\hline
+				Parado & \includegraphics[width = 0.8\textwidth ]{parado}} & - & - \\
+				\hline				 
+			\end{tabular}
+			\caption{ Salida en displays 7 segmentos para el control del motor y de la puerta }
+			\label{tab:tabla2ApendiceA}
+	\end{table}
+    
+	Este bloque consta de un bloque para la codificación de ambos displays en serie con los respectivos divisores de frecuencia para cada display.
