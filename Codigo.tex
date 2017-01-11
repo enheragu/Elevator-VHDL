@@ -245,7 +245,36 @@
 
 \subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
 
+Esta entidad, formada por tres bloques, dos Decodificador7s y un DivisorFrecuencia se encarga de mostrar en las cuatro pantallas de siete segmentos el estado del ascensor. \\ 
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadVisualizacion.vhd}
+
+	Como se puede ver en la Figura (\ref{fig:EntidadControlAscensorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{EntidadControlAscensorOK}
+		    \caption{Esquema exterior de la Entidad Visualizacion}
+		    \label{fig:EntidadVisualizacionOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:EntidadVisualizacionImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{EntidadControlAscensorImplementacion}
+		    \caption{Esquema interno de la Entidad ControlAscensor}
+		    \label{fig:EntidadVisualizacionImplementacion}
+	\end{figure}
+
 \subsection{Código Entidad \textit{Visualizacion (testbench)}:} \label{code:Visualizacion_tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadVisualizacion}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionEntidadVisualizacion}
+		    \caption{Simulación del testbench de la entidad ControlAscensor}
+		    \label{fig:SimulacionEntidadVisualizacion}
+	\end{figure}
+
 
 \subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
 
