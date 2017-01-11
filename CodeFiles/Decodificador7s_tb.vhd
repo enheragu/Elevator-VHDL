@@ -1,3 +1,15 @@
+ -------------------------------------------------------------------------------
+ -- Title : Decodificador7s (tb)
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : Decodificador7s_tb.vhd
+ -- Author : AlbertoBB
+ -- Created : 2016/12/26
+ -- Last modified : 2016/12/26
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the testbench of Decodificador7s.vhd
+ -------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
