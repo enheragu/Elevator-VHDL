@@ -5,7 +5,7 @@
 -- File : EntidadInterfazEntrada_tb.vhd
 -- Author : AranchaCM
 -- Created : 2017/01/09
--- Last modified : 2017/01/10
+-- Last modified : 2017/01/11
 -------------------------------------------------------------------------------
 -- Description :
 -- Implements athe testbench of EntidadInterfazEntrada.vhd
@@ -54,8 +54,10 @@ ARCHITECTURE behavior OF EntidadInterfazEntrada_tb IS
 				 (Motor => "00", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
 				 (Motor => "10", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
 				 (Motor => "10", SensorVoy => "0010", PisoVoy => "1000", SensorEstoy => "0000", PisoEstoy => "0010"),
-				 (Motor => "10", SensorVoy => "0100", PisoVoy => "1000", SensorEstoy => "0100", PisoEstoy => "0100"),
-				 (Motor => "10", SensorVoy => "0100", PisoVoy => "1000", SensorEstoy => "1000", PisoEstoy => "1000"),
+				 (Motor => "00", SensorVoy => "0110", PisoVoy => "1000", SensorEstoy => "1100", PisoEstoy => "0010"),
+				 (Motor => "00", SensorVoy => "0001", PisoVoy => "0001", SensorEstoy => "0000", PisoEstoy => "0010"),
+				 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "0100", PisoEstoy => "0100"),
+				 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "1000", PisoEstoy => "1000"),
 				 (Motor => "00", SensorVoy => "0010", PisoVoy => "0010", SensorEstoy => "0000", PisoEstoy => "1000")
 	);
  

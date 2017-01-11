@@ -5,7 +5,7 @@
 -- File : BloqueadorPisoVoy.vhd
 -- Author : AranchaCM
 -- Created : 2016/12/26
--- Last modified : 2017/01/10
+-- Last modified : 2017/01/11
 -------------------------------------------------------------------------------
 -- Description :
 -- Implements the filter of the buttons
@@ -35,7 +35,7 @@ begin
 	process (SensorVoy, Motor)
 	begin
 		if Motor = "00" then
-			if SensorVoy /= "0000" then
+			if SensorVoy = "0001" or SensorVoy = "0010" or SensorVoy = "0100" or SensorVoy = "1000" then
 				boton <= SensorVoy;
 			else
 				boton <= boton;
