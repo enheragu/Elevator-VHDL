@@ -3,13 +3,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 USE ieee.std_logic_arith.ALL; 
 USE ieee.std_logic_unsigned.ALL;
 
-entity Decodificador is
+entity Decodificador7s is
     Port ( EntradaPisoBinaria   : in  STD_LOGIC_vector(3 DOWNTO 0);
            SalidaPiso7s : out  STD_LOGIC_vector(6 DOWNTO 0)
-			  );
-end Decodificador;
+		  );
+end Decodificador7s;
 
-architecture Behavioral of Decodificador is
+architecture Behavioral of Decodificador7s is
 
 begin
 	WITH EntradaPisoBinaria SELECT

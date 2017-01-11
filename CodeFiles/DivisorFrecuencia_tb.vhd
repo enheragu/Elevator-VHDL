@@ -27,12 +27,14 @@ ARCHITECTURE behavior OF DivisorFrecuencia_tb IS
    signal PisoVoy7s        : std_logic_vector(6 downto 0) := (others => '0');
    signal PisoEstoy7s     : std_logic_vector(6 downto 0) := (others => '0');
    signal Clk             : std_logic := '0';
+
  	--Outputs
    signal A0              : std_logic;
    signal A1              : std_logic;
    signal A2              : std_logic;
    signal A3              : std_logic;
    signal Salida7s        : std_logic_vector(6 downto 0);
+
    -- Clock period definitions
    constant Clk_period : time := 10 ns;
 	

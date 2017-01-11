@@ -2,13 +2,13 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY Decodificador_tb IS
-END Decodificador_tb;
+ENTITY Decodificador7s_tb IS
+END Decodificador7s_tb;
  
-ARCHITECTURE behavior OF Decodificador_tb IS 
+ARCHITECTURE behavior OF Decodificador7s_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
-    COMPONENT Decodificador
+    COMPONENT Decodificador7s
     PORT(
          EntradaPisoBinario : IN  std_logic_vector(3 downto 0);
          SalidaPiso7s : OUT  std_logic_vector(6 downto 0)
@@ -47,7 +47,7 @@ ARCHITECTURE behavior OF Decodificador_tb IS
 
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
-   uut: Decodificador PORT MAP (
+   uut: Decodificador7s PORT MAP (
           EntradaPisoBinario => EntradaPisoBinario,
           SalidaPiso7s => SalidaPiso7s
         );
