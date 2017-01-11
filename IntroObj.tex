@@ -33,23 +33,23 @@
     Nos centraremos en los componentes más importantes que utilizaresmos para la realización de este proyecto:
 
     \begin{itemize}
-        \item [1] Xilinx Spartan-3 XC3S200 FPGA  (encapsulado XC3S200FT256). Compuesta por 200000 puertas.
-        \item [2] 2Mbit Xilinx XCF02S Platform Flash.
-        \item [4] 1M-byte of Fast Asynchronous SRAM.
-        \item [10] Cuatro displays LED de 7 segmentos.
-        \item [11] Ocho interruptores.
-        \item [12] Ocho salidas LED independientes.
-        \item [13] Cuatro pulsadores.
-        \item [14] Cristal osculador (CLK) de 50MHz.
-        \item [18] LED indicador de que la FPGA ha sido configurada correctamente
+        \item [1.] Xilinx Spartan-3 XC3S200 FPGA  (encapsulado XC3S200FT256). Compuesta por 200000 puertas.
+        \item [2.] 2Mbit Xilinx XCF02S Platform Flash.
+        \item [4.] 1M-byte of Fast Asynchronous SRAM.
+        \item [10.] Cuatro displays LED de 7 segmentos.
+        \item [11.] Ocho interruptores.
+        \item [12.] Ocho salidas LED independientes.
+        \item [13.] Cuatro pulsadores.
+        \item [14.] Cristal osculador (CLK) de 50MHz.
+        \item [18.] LED indicador de que la FPGA ha sido configurada correctamente
 
     \end{itemize}
 
-    Las salidas físicas para los \textbf{displays de 7 segmentos} se encuentran en los pines que se pueden ver en la siguiente tabla. Los displays se encuentran representados con el número 10 en la figura (\ref{fig:Spartan3TopSide}) del apartado (\ref{subsection:Spartan-3}).
+    Las salidas físicas para los \textbf{displays de 7 segmentos} se encuentran en los pines que se pueden ver en la siguiente tabla. Los displays se encuentran representados con el número 10 en la figura (\ref{fig:Spartan3TopSide}) del apartado (\ref{subsection:Spartan-3}). \\ 
 
-    Como se puede ver en la figura los 4 displays comparten 8 pines de control, para elegir un display u otro están los Ánodos de control, en la tabla (\ref{tab:anodoControl}).
+    Como se puede ver en la figura los 4 displays comparten 8 pines de control, para elegir un display u otro están los Ánodos de control, en la tabla (\ref{tab:anodoControl}). \\ 
 
-    Es importante tener en cuenta que los cuatro display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente.
+    Es importante tener en cuenta que los cuatro display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente. \\ 
 
     \begin{table}[H]
             \centering

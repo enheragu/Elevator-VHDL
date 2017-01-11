@@ -124,7 +124,15 @@
 \subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{bloque:DecodificadorBinarioEntero}
 	En este bloque se traduce la señal binaria que codifica tanto el piso actual como el piso de destino a decimal para su posterior comparación.
 	Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\ 
-	
+
+	Como se ve en la figura (\ref{fig:BloqueDecodificadorBinarioEntero}) este bloque tiene una entrada de 4 bits (codificación en binario) y una salida de 32bits, para la codificación como número entero.
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = .85\textwidth ]{BloqueDecodificadorBinarioEntero}
+		    \caption{Representación del bloque DecodificadorBinarioEntero}
+		    \label{fig:BloqueDecodificadorBinarioEntero}
+	\end{figure}
+
 \subsection{Bloque \textit{Comparador}:} \label{bloque:Comparador}
 
 	En este bloque es donde se deciden las acciones del ascensor. Para ello se introducen dos señales, dos números enteros (correspondientes al piso actual y al piso objetivo) y se comparan para dar una salida, que determinará la reacción del ascensor (puerta y motor). \\ 
@@ -141,11 +149,8 @@
 
 
 \subsection{Bloque \textit{Controlador Motor} y \textit{Controlador Puerta}:} \label{bloque:MotorPuerta}
-    El bloque Controlador Motor se encarga de controlar el motor. En la entrada recibe dos bits con la codificación que se muestra en el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y los gestiona para modelar y simular con los recursos de la placa el movimiento del mismo. \\
-
-    El bloque Controlador Puerta se encarga del control de la puerta del ascensor. En la entrada recibe un bit con la codificación que se muestra en el Cuadro (\ref{tab:tabla3ApendiceA}) del Apéndice \ref{app:codEntSal} que indica si la puerta está abierta o cerrada; este bloque actua como interfaz entre esa codificación y el modelo real, en este caso se simulará con los recursos disponibles en la placa. \\ 
-
-    En este caso no tenemos ni puerta ni motor físico así que se ha decidido sacar la "reacción" que tendrían estos elementos por dos de los display de 7 segmentos de que se dispone, de esta forma se podrá ver en los displays los siguientes caracteres:\\ 
+    
+    En este caso no tenemos ni puerta ni motor físico así que se ha decidido sacar la "reacción" que tendrían estos elementos por dos de los display de 7 segmentos de que se dispone. Este bloque se encarga de recibir la señal de dos bits que codifica la decisión del comparador (como se mueve el motor y que hace la puerta) y saca dos señales de 7 bits donde codifica el caracter que se mostrará en cada caso. Se puede ver el esquema en la figura (\ref{fig:MotorPuerta}). Se podrá ver en los displays los siguientes caracteres:\\ 
 
 	\begin{table}[H]
         \centering
@@ -164,5 +169,13 @@
 			\caption{ Salida en displays 7 segmentos para el control del motor y de la puerta }
 			\label{tab:tablaVisualizacionMotorPuerta}
 	\end{table}
+
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = .85\textwidth ]{MotorPuerta}
+		    \caption{Representación del bloque MotorPuerta}
+		    \label{fig:MotorPuerta}
+	\end{figure}
+
     
 	
