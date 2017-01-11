@@ -21,6 +21,8 @@
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia_tb.vhd}
 
 \subsection{Código Bloque \textit{PistoActual}:} \label{code:PisoActual}
+	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con ela codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor de encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades:
+
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/PisoActual.vhd}
     
     Como se puede ver en la Figura (\ref{fig:BloquePisoActualOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
