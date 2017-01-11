@@ -35,6 +35,21 @@
 	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro displays comparten la salida de 7 bits, cambiando de un display a otro a través de los ánodos de contro. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia.vhd}
+	
+		Como se puede ver en la Figura (\ref{fig:BloqueDivisorFrecuenciaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueDvisorFrecuenciaOK}
+		    \caption{Esquema exterior del bloque DivisorFrecuencia}
+		    \label{fig:BloqueDivisorFrecuenciaOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueDivisorFrecuenciaImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{BloqueDvisorFrecuenciaImplementacion}
+		    \caption{Esquema interno del bloque DivisorFrecuencia}
+		    \label{fig:BloqueDivisorFrecuenciaImplementacion}
+	\end{figure}
 
 \subsection{Código Bloque \textit{Divisor de frecuencia (testbench)}:} \label{code:DivisorFrecuencia_Tb}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia_tb.vhd}
