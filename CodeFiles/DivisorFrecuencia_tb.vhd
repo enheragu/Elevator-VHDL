@@ -1,3 +1,15 @@
+ -------------------------------------------------------------------------------
+ -- Title : DivisorFrecuencia (tb)
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : DivisorFrecuencia_tb.vhd
+ -- Author :  AlbertoBB
+ -- Created : 2016/12/26
+ -- Last modified : 2016/12/26
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implements the testbench of DivisorFrecuencia.vhd
+ -------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
@@ -20,7 +32,7 @@ ARCHITECTURE behavior OF DivisorFrecuencia_tb IS
          Salida7s        : OUT  std_logic_vector(6 downto 0)
         );
     END COMPONENT;
-	-- SEÑALES
+	-- SEÃ‘ALES
    --Inputs
    signal ControlMotor7s  : std_logic_vector(6 downto 0) := (others => '0');
    signal ControlPuerta7s : std_logic_vector(6 downto 0) := (others => '0');
