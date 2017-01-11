@@ -1,3 +1,15 @@
+ -------------------------------------------------------------------------------
+ -- Title : Decodificador7s
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : PisoActual.vhd
+ -- Author : AlbertoBB
+ -- Created : 2016/12/18
+ -- Last modified : 2017/01/11
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- Implementation for seven-segment display
+ -------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 USE ieee.std_logic_arith.ALL; 
