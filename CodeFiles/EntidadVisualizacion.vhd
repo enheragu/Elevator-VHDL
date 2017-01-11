@@ -69,7 +69,7 @@ begin
 	);
 	
 	Inst_DivisorFrecuencia: DivisorFrecuencia port map (
-	     ControlMotor7s => ControlMotor7s,
+	    ControlMotor7s => ControlMotor7s,
         ControlPuerta7s => ControlPuerta7s, 
         PisoVoy7s => sigPisoVoy7s,
         PisoEstoy7s => sigPisoEstoy7s,  
