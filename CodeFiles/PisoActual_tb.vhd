@@ -35,7 +35,7 @@ ARCHITECTURE behavior OF PisoActual_tb IS
    signal SensorEstoy : std_logic_vector(3 downto 0);
 
  	--Outputs
-   signal PisoEstoy : std_logic_vector(6 downto 0);
+   signal PisoEstoy : std_logic_vector(3 downto 0);
 	
 	type vtest is record 
 			SensorEstoy : std_logic_vector(3 downto 0);

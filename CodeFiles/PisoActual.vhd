@@ -20,7 +20,7 @@ entity PisoActual is
 			 );
 end entity PisoActual;
 
-architecture Dataflow of PisoActual is
+architecture Behavioral of PisoActual is
 
 signal aux1: STD_LOGIC_VECTOR (SensorEstoy'range) := (others => '0');
 
@@ -34,5 +34,5 @@ begin
 
 	PisoEstoy <= aux1;
 		 
-end architecture Dataflow;
+end architecture Behavioral;
 
