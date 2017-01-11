@@ -290,31 +290,58 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un DivisorFrecuenc
 	Como se puede ver en la Figura (\ref{fig:VisualizacionOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.6\textwidth ]{EntidadControlAscensorOK}
+		    \includegraphics[width = 0.6\textwidth ]{EntidadVisualizacionOK}
 		    \caption{Esquema exterior de la Entidad Visualizacion}
 		    \label{fig:EntidadVisualizacionOK}
 	\end{figure}
     Además podemos ver en la Figura (\ref{fig:EntidadVisualizacionImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.9\textwidth ]{EntidadControlAscensorImplementacion}
-		    \caption{Esquema interno de la Entidad ControlAscensor}
+		    \includegraphics[width = 0.9\textwidth ]{EntidadVisualizacion}
+		    \caption{Esquema interno de la Entidad Visualizacion}
 		    \label{fig:EntidadVisualizacionImplementacion}
 	\end{figure}
 
 \subsection{Código Entidad \textit{Visualizacion (testbench)}:} \label{code:Visualizacion_tb}
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor_tb.vhd}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadVisualizacion_tb.vhd}
 
     Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadVisualizacion}):
 
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.8\textwidth ]{SimulacionEntidadVisualizacion}
-		    \caption{Simulación del testbench de la entidad ControlAscensor}
+		    \caption{Simulación del testbench de la entidad Visualizacion}
 		    \label{fig:SimulacionEntidadVisualizacion}
 	\end{figure}
 
 
 \subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
+Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento compoento de nuestro ascensor. \\ 
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor.vhd}
+
+	Como se puede ver en la Figura (\ref{fig:EntidadAscensorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{EntidadAscensorOK}
+		    \caption{Esquema exterior de la EntidadAscensor}
+		    \label{fig:EntidadAscensorOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:EntidadAscensorImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{EntidadAscensorImplementacion}
+		    \caption{Esquema interno de la EntidadAscensor}
+		    \label{fig:EntidadAscensorImplementacion}
+	\end{figure}
 
 \subsection{Código Código Entidad \textit{Acensor (testbench)}:} \label{code:Acensor_tb}
+\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadAscensor}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionEntidadAscensor(Subiendo)}
+		    \caption{Simulación del testbench de la entidad SimulacionEntidadAscensor(Subiendo)}
+		    \label{fig:SimulacionEntidadAscensor}
+	\end{figure}
