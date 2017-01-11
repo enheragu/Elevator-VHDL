@@ -5,7 +5,7 @@
  -- File : PisoActual.vhd
  -- Author : EnriqueHE
  -- Created : 2016/12/26
- -- Last modified : 2016/12/26
+ -- Last modified : 2017/01/11
  -------------------------------------------------------------------------------
  -- Description :
  -- Implements the filter of the endstops
@@ -27,18 +27,12 @@ signal aux1: STD_LOGIC_VECTOR (SensorEstoy'range) := (others => '0');
 begin
 	process (SensorEstoy)
 	begin
-		IF (sensorEstoy /= "0000") then
+		IF (sensorEstoy = "0001" or "0010" or "0100" or "1000") then
 		aux1 <= sensorEstoy;
 		end if;
 	end process;
 
-	with sensorEstoy select
-		pisoEstoy <= aux1 when "0000",
-			     sensorEstoy when "0001",
-			     sensorEstoy when "0010",
-			     sensorEstoy when "0100",
-			     sensorEstoy when "1000",
-			     "1111" when others;
+	PisoEstoy <= aux1;
 		 
 end architecture Dataflow;
 

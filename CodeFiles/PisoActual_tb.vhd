@@ -3,9 +3,9 @@
  -- Project : Elevator-VHDL
  -------------------------------------------------------------------------------
  -- File : PisoActual_tb.vhd
- -- Author : EnriqueHE
+ -- Author : EnriqueHE (and  modified by AranchaCM)
  -- Created : 2016/12/26
- -- Last modified : 2017/01/03 (by AranchaCM)
+ -- Last modified : 2017/01/11 
  -------------------------------------------------------------------------------
  -- Description :
  -- Implements the testbench of PisoActual.vhd
@@ -51,7 +51,9 @@ ARCHITECTURE behavior OF PisoActual_tb IS
 				 (sensorEstoy => "0010", pisoEstoy => "0010"),
 				 (sensorEstoy => "0000", pisoEstoy => "0010"),
 				 (sensorEstoy => "0100", pisoEstoy => "0100"),
-				 (sensorEstoy => "0000", pisoEstoy => "0100"),
+				 (sensorEstoy => "0000", pisoEstoy => "0100"),				 
+				 (sensorEstoy => "0110", pisoEstoy => "0100"),
+				 (sensorEstoy => "0010", pisoEstoy => "0010"),
 				 (sensorEstoy => "1000", pisoEstoy => "1000")		 
 	);
  
