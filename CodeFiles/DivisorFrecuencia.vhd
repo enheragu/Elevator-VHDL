@@ -1,32 +1,84 @@
+-------------------------------------------------------------------------------
+ -- Title : DivisorFrecuencia
+ -- Project : Elevator-VHDL
+ -------------------------------------------------------------------------------
+ -- File : Comparador.vhd
+ -- Author : AlbertoBB
+ -- Created : 2016/01/10
+ -- Last modified : 2016/01/10
+ -------------------------------------------------------------------------------
+ -- Description :
+ -- 
+ -------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity DivisorFrecuencia is
-	Port(
-	     PisoVoy7s : in  STD_LOGIC; -- reloj entrada
-        reset     : in  STD_LOGIC;
-        PisoVoy    : out STD_LOGIC
+    Port ( ControlMotor7s  : in  STD_LOGIC_VECTOR(7 downto 0);
+           ControlPuerta7s : in  STD_LOGIC_VECTOR(7 downto 0);
+           PisoVoy7s       : in  STD_LOGIC_VECTOR(7 downto 0);
+           PisoEstoy7s     : in  STD_LOGIC_VECTOR(7 downto 0);
+           Clk             : in  STD_LOGIC; 
+           A0              : out  STD_LOGIC;
+           A1              : out  STD_LOGIC;
+           A2              : out  STD_LOGIC;
+           A3              : out  STD_LOGIC;
+			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0);
+			  -- Divisor frecuencia
+           reset   : in  STD_LOGIC 
 	);
 end DivisorFrecuencia;
 
 architecture Behavioral of DivisorFrecuencia is
 		signal temporal: STD_LOGIC; --temporal: es el reloj de SALIDA
 		signal contador: integer range 0 to 124999 := 0; --escala: ESCALA/2
+		-- salidas
+		signal SigA0       : std_logic;
+		signal SigA1       : std_logic;
+		signal SigA2       : std_logic;
+		signal SigA3       : std_logic;
+		signal SigSalida7s : std_logic_vector(7 downto 0);
 begin
-		divisor_frecuencia: process (reset, PisoVoy7s) 
+		--divisor_frecuencia: 
+		process (reset, Clk) 
 		begin
 			if (reset = '1') then -- reset: ponemos todo a cero
 					temporal <= '0';
 					contador <= 0;
-			elsif rising_edge(PisoVoy7s) then
+			elsif rising_edge(Clk) then
 					if (contador = 124999) then
 						temporal <= NOT(temporal); -- realizamos cambio
 						contador <= 0;
 					else
 						contador <= contador+1;
 					end if;
-        end if;
-      end process;  
-PisoVoy <= temporal; -- SABEMOS QUE TEMPORAL ES LA SALIDA
-end Behavioral;
+        end if; 
+		  
+		  if rising_edge(Clk) then
+					if (contador = 0) then 
+						SigA0<='1' ; SigA1 <='0'; SigA2 <='0'; SigA3 <='0';
+                  	SigSalida7s <= ControlMotor7s;
+					end if;
+					if (contador = 62499) then -- Escala/4
+						SigA1<='0' ; SigA1<='1'; SigA2<='0'; SigA3<='0';
+							SigSalida7s <= ControlPuerta7s;
+					end if;
+					if (contador = 124999) then 
+						SigA0 <='0' ; SigA1 <='0'; SigA2 <='1'; SigA3 <='0';
+							SigSalida7s <= PisoVoy7s;
+					end if;
+					if (contador = 187498) then -- Escala * (3/4)
+						SigA3<='0' ; SigA1<='0'; SigA2<='0'; SigA3<='1';
+							SigSalida7s <= PisoEstoy7s;
+					end if;
+        end if; 
+		  
+		  end process;
+		
+A0 <= SigA0;
+A1 <= SigA1;
+A2 <= SigA2;
+A3 <= SigA3;
+Salida7s <= SigSalida7s;
 
+end Behavioral;
