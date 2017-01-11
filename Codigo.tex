@@ -2,6 +2,21 @@
 	Como se a adelantado en la sección (\ref{bloque:Decodificador7s}) este bloque es el encargado de adaptar las señales de salida a los displays. Para ello se asigna a cada posible entrada (cada piso) con una señal de salida que codifica en los 7 segmentos el caracter deseado, incluyendo un caracter de error.
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
+	
+	Como se puede ver en la Figura (\ref{fig:BloqueDecodificador7sOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueDecodificador7sOK}
+		    \caption{Esquema exterior del bloque Decodificador7s}
+		    \label{fig:BloqueDecodificador7sOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:BloqueDecodificador7sImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{BloqueDecodificador7sImplementacion}
+		    \caption{Esquema interno del bloque Decodificador7s}
+		    \label{fig:BloqueDecodificador7sImplementacion}
+	\end{figure}
 
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos (testbench)}:} \label{code:Decodificador7s_tb}
 	
