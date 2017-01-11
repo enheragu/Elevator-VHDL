@@ -1,4 +1,6 @@
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
+	Como se a adelantado en la sección (\ref{bloque:Decodificador7s}) este bloque es el encargado de adaptar las señales de salida a los displays. Para ello se asigna a cada posible entrada (cada piso) con una señal de salida que codifica en los 7 segmentos el caracter deseado, incluyendo un caracter de error.
+
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
 
 \subsection{Código Bloque \textit{Decodificador a 7 segmentos (testbench)}:} \label{code:Decodificador7s_tb}
@@ -15,13 +17,15 @@
 	\end{figure}
 
 \subsection{Código Bloque \textit{Divisor de frecuencia}:} \label{code:DivisorFrecuencia}
+	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro displays comparten la salida de 7 bits, cambiando de un display a otro a través de los ánodos de contro. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
+
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia.vhd}
 
 \subsection{Código Bloque \textit{Divisor de frecuencia (testbench)}:} \label{code:DivisorFrecuencia_Tb}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia_tb.vhd}
 
 \subsection{Código Bloque \textit{PistoActual}:} \label{code:PisoActual}
-	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con ela codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor de encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades:
+	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con ela codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor de encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades: \\ 
 
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/PisoActual.vhd}
     
@@ -83,6 +87,8 @@
 	\end{figure}
 
 \subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{code:DecodificadorBinarioEntero}
+	Como se ha visto en la sección (\ref{bloque:DecodificadorBinarioEntero}) este bloque pasa de la codificación binaria que se ha dado a cada piso a su equivalente entero para su posterior comparación. Se puede ver el código de dicho bloque a continuación: \\ 
+
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorBinarioEntero.vhd}
     
     Como se puede ver en la Figura (\ref{fig:BloqueDecodificadorBinarioEnteroOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -113,6 +119,8 @@
 	\end{figure}
 
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
+	Como se ha visto en la seccion (\ref{bloque:Comparado}) este bloque compara las dos señales enteras; si el piso objetivo está por encima del actual el motor sube y la puerta se cierra, si el piso objetivo es igual al piso actual el motor está parado y la puerta abierta, y finalmente, si el piso objetivo es menor que el piso actual el motor baja manteniendo la puerta cerrada durante el proceso. A continuación se presenta el código del bloque: \\ 
+
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador.vhd}	
 
 	Como se puede ver en la Figura (\ref{fig:BloqueComparadorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -143,6 +151,8 @@
 	\end{figure}
 
 \subsection{Código Bloque \textit{ Simulacion Motor Puerta}:} \label{code:MotorPuerta}
+	Como se ha visto en la sección (\ref{boque:MotorPuerta}) al no tener motor y puerta reales se ha optado por sacar su reacción a traves de los displays. Este bloque es similar al bloque Decodificador7s (se puede encontrar la descripción en la seccion \ref{bloque:Decodificador7s} así como su codificación en la sección \ref{code:Decodificador7s} para observar las similitudes). Lo que hace es tomar la señal de entrada de dos bits, que codifica la reacción del motor y la puerta para transformarla en un caracter que se podrá mostrar a través del display de 7 segmentos. La codificación en VHDL se puede ver a continuación: \\ 
+
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:MotorPuertaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -202,6 +212,8 @@
 	\end{figure}
 
 \subsection{Código Entidad \textit{Control Ascensor}:} \label{code:ControlAscensor}
+	Como se ha explicado en la sección (\ref{bloque:ControlAscensor}) esta entidad coordina y encapsula lo necesario para la toma de decisiones llevada a cabo por nuestro sistema, esto incluye el comparador y el codificador de binario a entero vistos anteriormente. \\ 
+
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadControlAscensor.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:EntidadControlAscensorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -232,6 +244,8 @@
 	\end{figure}
 
 \subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
+
+\subsection{Código Entidad \textit{Visualizacion (testbench)}:} \label{code:Visualizacion_tb}
 
 \subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
 
