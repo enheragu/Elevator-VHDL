@@ -27,7 +27,10 @@ signal aux1: STD_LOGIC_VECTOR (SensorEstoy'range) := (others => '0');
 begin
 	process (SensorEstoy)
 	begin
-		IF sensorEstoy="0001" or sensorEstoy="0010" or sensorEstoy="0100" or sensorEstoy="1000" then
+		IF sensorEstoy="0001" or 
+		   sensorEstoy="0010" or 
+		   sensorEstoy="0100" or 
+		   sensorEstoy="1000" then
 		aux1 <= sensorEstoy;
 		end if;
 	end process;

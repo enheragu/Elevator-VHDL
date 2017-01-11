@@ -24,10 +24,10 @@ architecture Behavioral of DecodificadorBinarioEntero is
 begin
 	with EntradaBinaria select 
 		SalidaEntera <= 1 when "0001",
-							 2 when "0010",
-							 3 when "0100",
-							 4 when "1000",
-							 0 when others;
+					 2 when "0010",
+					 3 when "0100",
+					 4 when "1000",
+					 0 when others;
 
 end Behavioral;
 
