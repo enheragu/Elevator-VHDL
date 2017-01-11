@@ -8,7 +8,7 @@
  -- Last modified : 2017/01/11
  -------------------------------------------------------------------------------
  -- Description :
- -- 
+ -- Display the status of the elevator in each of the 4 screens
  -------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
