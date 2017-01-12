@@ -19,6 +19,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity EntidadControlAscensor is
     Port ( PisoVoy : in  STD_LOGIC_VECTOR (3 downto 0);
            PisoEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
+			  CLK: in STD_LOGIC;
            ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
 			  );
 end EntidadControlAscensor;
@@ -37,6 +38,7 @@ architecture Behavioral of EntidadControlAscensor is
 	port (
 			PisoVoy: in INTEGER;
 			PisoEstoy: in INTEGER;
+			CLK: in STD_LOGIC;
 			ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
 			);
 	end component;
@@ -58,7 +60,8 @@ begin
 	
 	Inst_Comparador: Comparador port map (
 		PisoVoy => SigPisoVoy,
-		PisoEstoy => SigPisoEstoy, 	
+		PisoEstoy => SigPisoEstoy, 
+		CLK => CLK,
 		ControlMotor => ControlMotor
 	);
 

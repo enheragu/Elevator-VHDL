@@ -23,7 +23,7 @@ entity EntidadAscensor is
            A1              : out  STD_LOGIC;
            A2              : out  STD_LOGIC;
            A3              : out  STD_LOGIC;
-			  Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
+			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0)
 		  );
 end EntidadAscensor;
 
@@ -39,12 +39,13 @@ architecture Behavioral of EntidadAscensor is
 			  A1              : out  STD_LOGIC;
 			  A2              : out  STD_LOGIC;
 			  A3              : out  STD_LOGIC;
-			  Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
+			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0)
 		  );
 	end component;
 
 	component SimulacionMotorPuerta 
 		 Port ( ControlMotor   : in  STD_LOGIC_vector(1 DOWNTO 0);
+			     CLK: in STD_LOGIC;
 				  ControlMotor7s : out  STD_LOGIC_vector(6 DOWNTO 0);
 				  ControlPuerta7s : out  STD_LOGIC_vector(6 DOWNTO 0)
 			  );
@@ -53,6 +54,7 @@ architecture Behavioral of EntidadAscensor is
 	component EntidadControlAscensor 
 		 Port ( PisoVoy : in  STD_LOGIC_VECTOR (3 downto 0);
 				  PisoEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
+			     CLK: in STD_LOGIC;
 				  ControlMotor : out  STD_LOGIC_VECTOR (1 downto 0)
 			 );
 	end component;
@@ -61,6 +63,7 @@ architecture Behavioral of EntidadAscensor is
 	    Port ( SensorVoy : in  STD_LOGIC_VECTOR (3 downto 0);
 			     Motor : in STD_LOGIC_VECTOR (1 downto 0);
 	           SensorEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
+			     CLK: in STD_LOGIC;
 	           PisoVoy : out  STD_LOGIC_VECTOR (3 downto 0);
 	           PisoEstoy : out  STD_LOGIC_VECTOR (3 downto 0)
 			  );
@@ -77,6 +80,7 @@ begin
 		  SensorVoy => SensorVoy,
 	     Motor => sigControlMotor,
         SensorEstoy =>  SensorEstoy,
+		  CLK => CLK,
         PisoVoy => sigPisoVoy,
         PisoEstoy => sigPisoEstoy
 	);
@@ -84,11 +88,13 @@ begin
 	Inst_EntidadControlAscensor: EntidadControlAscensor port map (
 		  PisoVoy => sigPisoVoy, 
 		  PisoEstoy => sigPisoEstoy,
+		  CLK => CLK,
 		  ControlMotor => sigControlmotor
 	);
 	
 	Inst_SimulacionMotorPuerta: SimulacionMotorPuerta port map (
 	     ControlMotor => sigControlmotor,
+		  CLK => CLK,
         ControlMotor7s => sigControlMotor7s,
         ControlPuerta7s => sigControlPuerta7s
 	);

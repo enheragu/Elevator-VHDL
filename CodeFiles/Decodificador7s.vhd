@@ -28,7 +28,7 @@ begin
 		SalidaPiso7s <= "1001111" WHEN "0001", -- Lectura Piso 1
 				"0010010" WHEN "0010", -- Lectura Piso 2
 				"0000110" WHEN "0100", -- Lectura Piso 3
-                                "1001100" WHEN "1000", -- Lectura Piso 4
-                                "0110000" WHEN others; -- Error 
+            "1001100" WHEN "1000", -- Lectura Piso 4
+            "0110000" WHEN others; -- Error 
 end Behavioral;
 

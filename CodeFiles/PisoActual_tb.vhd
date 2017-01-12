@@ -26,6 +26,7 @@ ARCHITECTURE behavior OF PisoActual_tb IS
     COMPONENT PisoActual
     PORT(
          SensorEstoy : IN  std_logic_vector(3 downto 0);
+			CLK: IN STD_LOGIC;
          PisoEstoy : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
@@ -33,9 +34,13 @@ ARCHITECTURE behavior OF PisoActual_tb IS
 
    --Inputs
    signal SensorEstoy : std_logic_vector(3 downto 0);
+	signal CLK: std_logic;
 
  	--Outputs
    signal PisoEstoy : std_logic_vector(3 downto 0);
+	
+	-- Clock period definitions
+   constant CLK_period : time := 10 ns;
 	
 	type vtest is record 
 			SensorEstoy : std_logic_vector(3 downto 0);
@@ -62,15 +67,24 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: PisoActual PORT MAP (
           SensorEstoy => SensorEstoy,
+			 CLK => CLK,
           PisoEstoy => PisoEstoy
         );
-
+   -- Clock process definitions
+   CLK_process :process
+   begin
+		CLK <= '0';
+		wait for Clk_period/2;
+		CLK <= '1';
+		wait for Clk_period/2;
+   end process;
+	
 	tb: process
 	
 	begin
 		for i in 0 to test'high loop
 			SensorEstoy <= test(i).SensorEstoy;
-			wait for 20 ns;
+			wait for 200 ns;
 			assert PisoEstoy = test(i).PisoEstoy
 				report "salida incorrecta"
 				severity failure;

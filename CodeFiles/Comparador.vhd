@@ -19,6 +19,7 @@ entity Comparador is
     Port ( 	
 			PisoVoy : in  INTEGER;
 			PisoEstoy : in  INTEGER;
+			CLK: in STD_LOGIC;
          ControlMotor : out STD_LOGIC_VECTOR(1 downto 0)
 			  ); 
 end Comparador; 
@@ -26,9 +27,13 @@ end Comparador;
 architecture Behavioral of Comparador is
 
 begin
-	process (PisoEstoy, PisoVoy)
+	process (PisoEstoy, PisoVoy, CLK)
 	begin
-		IF PisoVoy = PisoEstoy THEN
+	IF rising_edge(CLK) THEN
+		IF PisoVoy = 0 or PisoEstoy = 0 THEN
+			ControlMotor <= "00"; -- engine stopped
+			
+		ELSIF PisoVoy = PisoEstoy THEN
 			ControlMotor <= "00"; -- engine stopped
 			
 		ELSIF PisoVoy > PisoEstoy THEN
@@ -36,5 +41,6 @@ begin
 			
 		ELSE ControlMotor <= "10"; -- descending
 		end if;
+	END IF;
 	END process;
 end Behavioral;

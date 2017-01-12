@@ -24,7 +24,7 @@ entity EntidadVisualizacion is
            A1              : out  STD_LOGIC;
            A2              : out  STD_LOGIC;
            A3              : out  STD_LOGIC;
-		   Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
+			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0)
 		  );
 end EntidadVisualizacion;
 
@@ -33,7 +33,7 @@ architecture Behavioral of EntidadVisualizacion is
 
 	component DivisorFrecuencia 
 	port (
-		   ControlMotor7s  : in  STD_LOGIC_VECTOR(6 downto 0);
+		     ControlMotor7s  : in  STD_LOGIC_VECTOR(6 downto 0);
            ControlPuerta7s : in  STD_LOGIC_VECTOR(6 downto 0);
            PisoVoy7s         : in  STD_LOGIC_VECTOR(6 downto 0);
            PisoEstoy7s       : in  STD_LOGIC_VECTOR(6 downto 0);
@@ -42,7 +42,7 @@ architecture Behavioral of EntidadVisualizacion is
            A1              : out  STD_LOGIC;
            A2              : out  STD_LOGIC;
            A3              : out  STD_LOGIC;
-		   Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
+		     Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
 			);
 	end component;
 
@@ -69,7 +69,7 @@ begin
 	);
 	
 	Inst_DivisorFrecuencia: DivisorFrecuencia port map (
-	    ControlMotor7s => ControlMotor7s,
+	     ControlMotor7s => ControlMotor7s,
         ControlPuerta7s => ControlPuerta7s, 
         PisoVoy7s => sigPisoVoy7s,
         PisoEstoy7s => sigPisoEstoy7s,  
@@ -78,7 +78,8 @@ begin
         A1 => A1, 
         A2 => A2, 
         A3 => A3,  
-	    Salida7s => Salida7s 
+	     Salida7s => Salida7s (7 downto 1)
 	);
 
+	Salida7s(0) <= '1';
 end Behavioral;

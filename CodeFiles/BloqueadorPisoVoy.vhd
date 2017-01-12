@@ -21,6 +21,7 @@ entity BoqueadorPisoVoy is
 
     Port ( Motor : in  STD_LOGIC_VECTOR(1 downto 0);
            SensorVoy : in  STD_LOGIC_VECTOR (numPisos-1 downto 0);
+			  CLK: in STD_LOGIC;
            PisoVoy : out  STD_LOGIC_VECTOR(numPisos-1 downto 0)
 	);
 
@@ -28,20 +29,19 @@ end BoqueadorPisoVoy;
 
 architecture behavioral of BoqueadorPisoVoy is
 
-signal boton: STD_LOGIC_VECTOR (PisoVoy'range) := (others=>'0');
+signal boton: STD_LOGIC_VECTOR (PisoVoy'range):= "0000";
 
 begin
 
-	process (SensorVoy, Motor)
+	process (SensorVoy, Motor, CLK)	
 	begin
-		if Motor = "00" then
-			if SensorVoy = "0001" or SensorVoy = "0010" or SensorVoy = "0100" or SensorVoy = "1000" then
+		if rising_edge(CLK) and Motor = "00" then
+			if SensorVoy = "0001" or
+				SensorVoy = "0010" or 
+				SensorVoy = "0100" or 
+				SensorVoy = "1000" then
 				boton <= SensorVoy;
-			else
-				boton <= boton;
 			end if;
-		else
-			boton <= boton;
 		end if;
 	end process;
 
