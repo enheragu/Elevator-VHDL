@@ -20,7 +20,8 @@ entity EntidadInterfazEntrada is
            SensorEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
 			  CLK: in STD_LOGIC;
            PisoVoy : out  STD_LOGIC_VECTOR (3 downto 0);
-           PisoEstoy : out  STD_LOGIC_VECTOR (3 downto 0)
+           PisoEstoy : out  STD_LOGIC_VECTOR (3 downto 0);			  
+			  MemPisoVoy1, MemPisoVoy2 :  out  STD_LOGIC_VECTOR(3 downto 0)
 			  );
 end EntidadInterfazEntrada;
 
@@ -29,7 +30,8 @@ component BoqueadorPisoVoy
 	Port ( SensorVoy : in  STD_LOGIC_VECTOR (3 downto 0);
 			 Motor : in STD_LOGIC_VECTOR (1 downto 0);
 			 CLK: in STD_LOGIC;
-          PisoVoy : out  STD_LOGIC_VECTOR (3 downto 0)
+          PisoVoy : out  STD_LOGIC_VECTOR (3 downto 0);
+			 MemPisoVoy1, MemPisoVoy2 :  out  STD_LOGIC_VECTOR(3 downto 0)
 			 );
 end component;
 
@@ -45,7 +47,9 @@ Inst_BoqueadorPisoVoy: BoqueadorPisoVoy port map(
 	SensorVoy => SensorVoy,
 	Motor => Motor,
 	CLK => CLK,
-	PisoVoy => PisoVoy
+	PisoVoy => PisoVoy,
+	MemPisoVoy1 => MemPisoVoy1,
+	MemPisoVoy2 => MemPisoVoy2
 );
 
 Inst_PisoActual: PisoActual port map(

@@ -23,7 +23,8 @@ entity EntidadAscensor is
            A1              : out  STD_LOGIC;
            A2              : out  STD_LOGIC;
            A3              : out  STD_LOGIC;
-			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0)
+			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0);
+			  LED0,LED1,LED2,LED3,LED4,LED5,LED6,LED7 : OUT STD_LOGIC
 		  );
 end EntidadAscensor;
 
@@ -65,14 +66,24 @@ architecture Behavioral of EntidadAscensor is
 	           SensorEstoy : in  STD_LOGIC_VECTOR (3 downto 0);
 			     CLK: in STD_LOGIC;
 	           PisoVoy : out  STD_LOGIC_VECTOR (3 downto 0);
-	           PisoEstoy : out  STD_LOGIC_VECTOR (3 downto 0)
+	           PisoEstoy : out  STD_LOGIC_VECTOR (3 downto 0);
+				  MemPisoVoy1, MemPisoVoy2 :  out  STD_LOGIC_VECTOR(3 downto 0)
 			  );
+	end component;
+	
+	component DecodificadorLED 	
+		PORT(
+			  MemPisoVoy1, MemPisoVoy2 :  in  STD_LOGIC_VECTOR(3 downto 0);
+			  CLK: in STD_LOGIC;
+			  LED0,LED1,LED2,LED3,LED4,LED5,LED6,LED7 : OUT STD_LOGIC
+		);
 	end component;
 		
 	--signal declaration
 	signal sigPisoVoy, sigPisoEstoy : STD_LOGIC_VECTOR(3 downto 0);
 	signal sigControlmotor: STD_LOGIC_VECTOR(1 downto 0);
 	signal sigControlMotor7s, sigControlPuerta7s : STD_LOGIC_VECTOR(6 downto 0);
+	signal sigMemPisoVoy1, sigMemPisoVoy2: STD_LOGIC_VECTOR(3 downto 0);
 	
 begin
 
@@ -82,7 +93,9 @@ begin
         SensorEstoy =>  SensorEstoy,
 		  CLK => CLK,
         PisoVoy => sigPisoVoy,
-        PisoEstoy => sigPisoEstoy
+        PisoEstoy => sigPisoEstoy,
+		  MemPisoVoy1 => sigMemPisoVoy1,
+		  MemPisoVoy2 => sigMemPisoVoy2
 	);
 
 	Inst_EntidadControlAscensor: EntidadControlAscensor port map (
@@ -111,6 +124,21 @@ begin
         A3 => A3,  
 	     Salida7s => Salida7s 
 	);
+	
+	Inst_DecodificadorLED: DecodificadorLED port map (
+		  MemPisoVoy1 => sigMemPisoVoy1,
+		  MemPisoVoy2 => sigMemPisoVoy2,
+		  CLK => CLK,
+		  LED0 => LED0,
+		  LED1 => LED1,
+		  LED2 => LED2,
+		  LED3 => LED3,
+		  LED4 => LED4,
+		  LED5 => LED5,
+		  LED6 => LED6,
+		  LED7 => LED7
+	);
+
 
 end Behavioral;
 
