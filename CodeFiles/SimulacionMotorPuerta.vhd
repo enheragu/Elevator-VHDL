@@ -30,14 +30,14 @@ begin
 	begin
 		case ControlMotor is
 			when "00" =>
-				ControlMotor7s <= "0000001";
-				ControlPuerta7s <= "1110111";
+				ControlMotor7s <= "0000001"; -- Motor Parado, caracter -
+				ControlPuerta7s <= "1110111"; -- Puerta abierta, caracter A
 			when "01" =>
-				ControlMotor7s <= "1011011";
-				ControlPuerta7s <= "1001110";
+				ControlMotor7s <= "1011011"; -- Motor Subiendo, caracter S
+				ControlPuerta7s <= "1001110"; -- Puerta cerrada, caracter C
 			when "10" =>
-				ControlMotor7s <= "1111111";
-				ControlPuerta7s <= "1001110";
+				ControlMotor7s <= "1111111"; -- Motor Bajando, caracter B
+				ControlPuerta7s <= "1001110"; -- Puerta cerrada, caracter C
 			when others =>
 				
  		end case;
