@@ -1,5 +1,4 @@
 
-
 	\begin{table}[H]
     \centering
 		\begin{tabular}{|c|c|c||c|c|c|}
@@ -60,3 +59,58 @@
 		\caption{ Configuración de los pines de salida al display de 7 segmentos }
 		\label{tab:pin7s}
 	\end{table}
+	
+
+\subsection{Caso de Uso Práctico:}
+	
+	Antes de poder hacer una comprobación del funcionamiento de la maqueta debemos conocer sobre que componentes se visualizará la información:
+	
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.6\textwidth ]{CasoUso/0.jpg}
+        \caption{Distribución salidas/entradas de la maqueta en la Spartan-3}
+        \label{fig:Spartan3Interfaz}
+    \end{figure}
+    
+    
+    \begin{itemize}
+	    \item 1. Memoria 2: se ve que piso se ha guardado iluminándose el LED de dicha posición (De derecha a izquierda en orden ascendente).
+	    \item 2. Memoria 1: Equivalente al anterior, refleja la posición guardada en la memoria 1.
+	    \item 3. Emulan los finales de carrera para ver en qué piso se encuentra el ascensor. De derecha a izquierda en orden ascendente de pisos.
+	    \item 4. Emulan los botones para seleccionar el piso al que se desea ir. De derecha a izquierda en orden ascendente de pisos.
+	    \item 5. Displays para mostrar la información, se puede ver a continuación que se muestra en cada display.
+	\end{itemize} 
+	
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.6\textwidth ]{CasoUso/0_1.jpg}
+        \caption{Distibución de las salidas a los displays}
+        \label{fig:Spartan3InterfazDisplays}
+    \end{figure}
+    
+    \begin{itemize}
+		    \item  D1. Piso actual, marcado por los finales de carrera.
+		    \item  D2. Piso objetivo, al que quiero ir.
+		    \item  D3. Funcionamiento de la puerta.
+		    \item  D4. Funcionamiento del motor.
+	\end{itemize} 
+	
+
+    
+	\begin{longtable}{cm{0.2\textwidth}cm{0.2\textwidth}}
+	\centering
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/1.jpg} & 1. &
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/2.jpg} & 2.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/3.jpg} & 3. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/4.jpg} & 4.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/5.jpg} & 5. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/6.jpg} & 6.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/7.jpg} & 7. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/8.jpg} & 8.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/9.jpg} & 9. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/10.jpg} & 10.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/11.jpg} & 11. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/12.jpg} & 12.  \\
+		 \includegraphics[width = 0.25\textwidth ]{CasoUso/13.jpg} & 13. & 
+		  \includegraphics[width = 0.25\textwidth ]{CasoUso/14.jpg} & 14.  \\
+	\end{longtable}
