@@ -2,16 +2,16 @@
 
 	\begin{table}[H]
     \centering
-		\begin{tabular}{|c|c||c|c|}
+		\begin{tabular}{|c|c|c||c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{4}{|c|}{  \textbf{ {Configuración Pines de entrada}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{6}{|c|}{  \textbf{ {Configuración Pines de entrada}}} \\
 			\hline \hline
-			\multicolumn{2}{|c|}{  \textbf{ {SensorVoy (4bits)}}} & \multicolumn{2}{|c|}{\textbf{SensorEstoy (4bits)}} \\
+			\multicolumn{3}{|c|}{  \textbf{ {SensorVoy (4bits)}}} & \multicolumn{3}{|c|}{\textbf{SensorEstoy (4bits)}} \\
 			\hline
-			SensorVoy[0] & & SensorEstoy[0] & \\
-			SensorVoy[1] & & SensorEstoy[1] & \\
-			SensorVoy[2] & & SensorEstoy[2] & \\
-			SensorVoy[3] & & SensorEstoy[3] & \\
+			SensorVoy[0] & SW0 & F12 & SensorEstoy[0] & BTN0 & M13 \\
+			SensorVoy[1] & SW1 & G12 & SensorEstoy[1] & BTN1 & M14 \\
+			SensorVoy[2] & SW2 & H14 & SensorEstoy[2] & BTN2 & L13 \\
+			SensorVoy[3] & SW3 & H13 & SensorEstoy[3] & BTN3 & L14 \\
 			\hline
 		\end{tabular}
 		\caption{ Configuración de los pines de entrada con las entradas del sistema }
@@ -24,7 +24,7 @@
 			\hline
 			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{2}{|c|}{  \textbf{ {Configuración pin CLK}}} \\
 			\hline \hline
-			CLK & \\ 
+			CLK & T9 \\ 
 			\hline
 		\end{tabular}
 		\caption{ Configuración del pin para el CLK }
@@ -33,19 +33,19 @@
 
 	\begin{table}[H]
     \centering
-		\begin{tabular}{|c|c||c|c|}
+		\begin{tabular}{|c|c||c|c|c|}
 			\hline
 			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{4}{|c|}{  \textbf{ {Configuración Pines de los displays de 7 segmentos}}} \\
 			\hline \hline
 			\multicolumn{2}{|c|}{  \textbf{ { Salida7s (7bits)}}} & \multicolumn{2}{|c|}{\textbf{Ánodos de Control}} \\
 			\hline
-			Salida7s[0] & & A0 & \\
-			Salida7s[1] & & A1 & \\
-			Salida7s[2] & & A2 & \\
-			Salida7s[3] & & A3 & \\
-			Salida7s[4] & & - & - \\
-			Salida7s[5] & & - & - \\
-			Salida7s[6] & & - & - \\
+			Salida7s[0] & E14 & Motor & AN0 & D14 \\
+			Salida7s[1] & G13 & Puerta & AN1 & G14 \\
+			Salida7s[2] & N15 & PisoVoy & AN2 & F14 \\
+			Salida7s[3] & P15 & PisoEstoy & AN3 & E13 \\
+			Salida7s[4] & R16 & - & - & - \\
+			Salida7s[5] & F13 & - & - & - \\
+			Salida7s[6] & N16 & - & - & - \\
 			\hline
 		\end{tabular}
 		\caption{ Configuración de los pines de salida al display de 7 segmentos }
