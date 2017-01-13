@@ -60,10 +60,10 @@ ARCHITECTURE behavior OF DivisorFrecuencia_tb IS
    END RECORD;
    TYPE vtest_vector IS ARRAY (natural RANGE <>) OF vtest;
 	CONSTANT test: vtest_vector := (
-		(A0=> '1', A1=> '0', A2=> '0', A3=> '0',Salida7s => "1111111"),
-		(A0=> '0', A1=> '1', A2=> '0', A3=> '0',Salida7s => "1110000"),
-		(A0=> '0', A1=> '0', A2=> '1', A3=> '0',Salida7s => "0001111"),
-		(A0=> '0', A1=> '0', A2=> '0', A3=> '1',Salida7s => "0000000")
+		(A0=> '0', A1=> '1', A2=> '1', A3=> '1',Salida7s => "1111111"),
+		(A0=> '1', A1=> '0', A2=> '1', A3=> '1',Salida7s => "1110000"),
+		(A0=> '1', A1=> '1', A2=> '0', A3=> '1',Salida7s => "0001111"),
+		(A0=> '1', A1=> '1', A2=> '1', A3=> '0',Salida7s => "0000000")
 		 );
 
 BEGIN
@@ -96,7 +96,7 @@ BEGIN
 				ControlPuerta7s <= "1110000";
 				PisoVoy7s <= "0001111";
 				PisoEstoy7s <= "0000000";
-				WAIT FOR 40 ns;
+				WAIT FOR 20 ns;
 					ASSERT A0 = test(i).A0 and 
 							 A1 = test(i).A1 and
 							 A2 = test(i).A2 and

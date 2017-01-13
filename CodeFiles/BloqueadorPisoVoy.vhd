@@ -26,8 +26,7 @@ architecture behavioral of BoqueadorPisoVoy is
 
 signal sigPisoVoy: STD_LOGIC_VECTOR (PisoVoy'range):= "0000";
 signal sigMemPisoVoy1, sigMemPisoVoy2: STD_LOGIC_VECTOR (PisoVoy'range):= "0000";
-
-
+signal delay: integer range 0 to 50000000:= 0; -- 1 second at 50MHz
 begin
 
 	process (SensorVoy, Motor, CLK)	
@@ -42,34 +41,38 @@ begin
 				   sigMemPisoVoy1 = "0000" and 
 				   sigMemPisoVoy2 = "0000" then
 					-- sentencias:
-							sigPisoVoy <= SensorVoy;			
+					sigPisoVoy <= SensorVoy;			
 					
 				elsif Motor /= "00" and 
 				      SensorVoy /= sigPisoVoy and 
 				      sigMemPisoVoy1 = "0000" then
 						-- sentencias:
-							sigMemPisoVoy1 <= SensorVoy;
+						sigMemPisoVoy1 <= SensorVoy;
 					
 				elsif Motor /= "00" and 
 				      SensorVoy /= sigMemPisoVoy1 and 
 				      sigMemPisoVoy1 /= "0000"  and 
 						sigMemPisoVoy2 = "0000" then
 						-- sentencias:
-							sigMemPisoVoy2 <= SensorVoy;
+						sigMemPisoVoy2 <= SensorVoy;
 					
 				end if;
 			end if;
+
 			if Motor = "00" and 
 			   sigMemPisoVoy1 /= "0000" then
 				-- sentencias:
+				delay <= delay+1;
+				if (delay = 50000000) then --waits 1s before closing the door again
 					sigPisoVoy <= sigMemPisoVoy1;
 					sigMemPisoVoy1 <= "0000";
+					delay <= 0;
+				end if;
 			elsif Motor = "00" and sigMemPisoVoy1 = "0000" then
 				sigMemPisoVoy1 <= sigMemPisoVoy2;
 				sigMemPisoVoy2 <= "0000";
 			end if;
 		end if;
-
 	end process;
 	
 	MemPisoVoy1 <= sigMemPisoVoy1;
