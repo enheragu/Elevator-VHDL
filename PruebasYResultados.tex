@@ -95,21 +95,73 @@
 		    \item  D4. Funcionamiento del motor.
 	\end{itemize} 
 	
-
     
-	\begin{longtable}{cm{0.2\textwidth}cm{0.2\textwidth}}
+	\begin{table}[H]
 	\centering
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/2.jpg} & 1. Al arrancar o resetear el sistema tanto el piso objetivo como el piso actual se inicializan a 0, a la espera de recibir información del sistema real. En este tipo de indeterminaciones el ascensor permanece parado con la puerta abierta. &
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/3.jpg} & 2. Se pasa información sobre los pisos, en este caso el ascensor se situa en el primer piso. Tanto el piso actual como el objetivo son el mismo (1,1), el ascensor permanece parado (-) con la puerta abierta (A).  \\
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/4.jpg} & 3. Se marca el cuarto piso como objetivo, la puerta se cierra (C) y el ascensor comienza a subir (S). & 
-		  \includegraphics[width = 0.25\textwidth ]{CasoUso/5.jpg} & 4. Según pasa por los pisos intermedios se actualiza el display de piso actual, el ascensor sigue cerrado y subiendo.  \\
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/6.jpg} & 5.  Cuando llega a la planta deseada, el ascensor se detiene y la puerta se abre. & 
-		  \includegraphics[width = 0.25\textwidth ]{CasoUso/7.jpg} & 6.  Al marcar un piso inferior, el ascensor se cierra y comienza a descender (B). \\
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/8.jpg} & 7. En este punto podemos marcar otro piso que queda registrado en la memoria. En este caso se marca el tres, que se ve reflejado en el tercer LED de los correspondientes a la memoria 1. & 
-		  \includegraphics[width = 0.25\textwidth ]{CasoUso/9.jpg} & 8. Mientras sigue bajando se registra otro piso, el 2 que se guarda en la segunda memoria, viéndose reflejado en el segundo led de los correspondientes a dicha memoria. \\
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/9.1.jpg} & 9. Cuando el ascensor llega al piso objetivo, que era el primero, el ascensor permanece abierto y parado durante un tiempo especificado (para simularlo espera un segundo). & 
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/10.jpg} & 10.  Una vez ha esperado dicho tiempo se carga en la memoria el siguiente dato, el piso tres al cual nos dirigiremos ahora. El guardado en la memoria dos pasa a la primera (que será el siguiente piso), una vez llegado al tercer piso nos dirigimos al segundo. Estos ya no se reflejan en los LEDs destinados a la memoria, si no que vemos que se ha marcado el cuarto piso al que se ha llamado.\\
-		  \includegraphics[width = 0.25\textwidth ]{CasoUso/12.jpg} & 10.  Una vez ha llegado al tercer piso nos dirigimos al segundo. Estos ya no se reflejan en los LEDs destinados a la memoria, si no que vemos que se ha marcado el cuarto piso. &
-		 \includegraphics[width = 0.25\textwidth ]{CasoUso/13.jpg} & 11. Cuando llega al segundo piso se carga el cuarto y la memoria queda vacia. \\ 
-		  \includegraphics[width = 0.25\textwidth ]{CasoUso/14.jpg} & 12. Una vez ha llegado al cuarto piso el ascensor se para y la puerta se abre. & - & - \\
-	\end{longtable}
+	\begin{tabular}{ccc}
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/2.jpg}  & 
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/3.jpg} & 
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/4.jpg}   \\
+	\end{tabular}
+	\end{table}
+	
+	\begin{itemize}
+	    \item 1. Al arrancar o resetear el sistema tanto el piso objetivo como el piso actual se inicializan a 0, a la espera de recibir información del sistema real. En este tipo de indeterminaciones el ascensor permanece parado con la puerta abierta.	
+	    \item 2. Se pasa información sobre los pisos, en este caso el ascensor se situa en el primer piso. Tanto el piso actual como el objetivo son el mismo (1,1), el ascensor permanece parado (-) con la puerta abierta (A).	
+	    \item 3. Se marca el cuarto piso como objetivo, la puerta se cierra (C) y el ascensor comienza a subir (S).
+	\end{itemize}
+	
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ccc}
+		  \includegraphics[width = 0.3\textwidth ]{CasoUso/5.jpg} &
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/6.jpg}  &
+		  \includegraphics[width = 0.3\textwidth ]{CasoUso/7.jpg}   \\
+	\end{tabular}
+	\end{table}
+	
+	\begin{itemize}
+	    \item 4. Según pasa por los pisos intermedios se actualiza el display de piso actual, el ascensor sigue cerrado y subiendo.	
+	    \item 5.  Cuando llega a la planta deseada, el ascensor se detiene y la puerta se abre.	
+	    \item 6.  Al marcar un piso inferior, el ascensor se cierra y comienza a descender (B).	
+	\end{itemize}
+	
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ccc}
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/8.jpg}   &
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/9.jpg} &
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/9_1.jpg}  \\
+	\end{tabular}
+	\end{table}
+	
+	\begin{itemize}
+	    \item 7. En este punto podemos marcar otro piso que queda registrado en la memoria. En este caso se marca el tres, que se ve reflejado en el tercer LED de los correspondientes a la memoria 1.	
+	    \item 8. Mientras sigue bajando se registra otro piso, el 2 que se guarda en la segunda memoria, viéndose reflejado en el segundo led de los correspondientes a dicha memoria.	
+	    \item 9. Cuando el ascensor llega al piso objetivo, que era el primero, el ascensor permanece abierto y parado durante un tiempo especificado (para simularlo espera un segundo).
+	\end{itemize}
+	
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ccc}
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/10.jpg}  &
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/12.jpg}   &
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/13.jpg}  \\ 
+	\end{tabular}
+	\end{table}
+	\begin{itemize}
+	    \item 10.  Una vez ha esperado dicho tiempo se carga en la memoria el siguiente dato, el piso tres al cual nos dirigiremos ahora. El guardado en la memoria dos pasa a la primera (que será el siguiente piso), una vez llegado al tercer piso nos dirigimos al segundo. Estos ya no se reflejan en los LEDs destinados a la memoria, si no que vemos que se ha marcado el cuarto piso al que se ha llamado.
+	    \item 11.  Una vez ha llegado al tercer piso nos dirigimos al segundo. Estos ya no se reflejan en los LEDs destinados a la memoria, si no que vemos que se ha marcado el cuarto piso.
+	    \item 12. Cuando llega al segundo piso se carga el cuarto y la memoria queda vacia.
+	\end{itemize}
+	
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ccc}
+		 \includegraphics[width = 0.3\textwidth ]{CasoUso/14.jpg}   &  &  \\
+	\end{tabular}
+	\end{table}
+	
+	\begin{itemize}
+	    \item 13. Una vez ha llegado al cuarto piso el ascensor se para y la puerta se abre.
+	\end{itemize}
