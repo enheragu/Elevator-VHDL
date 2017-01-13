@@ -37,27 +37,45 @@
     \centering
 		\begin{tabular}{|c|c||c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{4}{|c|}{  \textbf{ {Configuración Pines de los displays de 7 segmentos}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{5}{|c|}{  \textbf{ {Configuración Pines de los displays de 7 segmentos}}} \\
 			\hline \hline
 			\multicolumn{2}{|c|}{  \textbf{ { Salida7s (7bits)}}} & \multicolumn{2}{|c|}{\textbf{Ánodos de Control}} \\
 			\hline
-			Salida7s[0] & E14 & Motor & AN0 & D14 \\
+			Salida7s[0] & P16 & Motor & AN0 & D14 \\
 			\hline
-			Salida7s[1] & G13 & Puerta & AN1 & G14 \\
+			Salida7s[1] & N16 & Puerta & AN1 & G14 \\
 			\hline
-			Salida7s[2] & N15 & PisoVoy & AN2 & F14 \\
+			Salida7s[2] & F13 & PisoVoy & AN2 & F14 \\
 			\hline
-			Salida7s[3] & P15 & PisoEstoy & AN3 & E13 \\
+			Salida7s[3] & R16 & PisoEstoy & AN3 & E13 \\
 			\hline
-			Salida7s[4] & R16 & - & - & - \\
+			Salida7s[4] & P15 & - & - & - \\
 			\hline
-			Salida7s[5] & F13 & - & - & - \\
+			Salida7s[5] & N15 & - & - & - \\
 			\hline
-			Salida7s[6] & N16 & - & - & - \\
+			Salida7s[6] & G17 & - & - & - \\
+			\hline
+			Salida7s[7] & E14 & - & - & - \\
 			\hline
 		\end{tabular}
 		\caption{ Configuración de los pines de salida al display de 7 segmentos }
 		\label{tab:pin7s}
+	\end{table}
+
+
+	\begin{table}[H]
+    \centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{4}{|c|}{  \textbf{ {Configuración Pines de los displays de 7 segmentos}}} \\
+			\hline \hline
+			LED[0] & LED[1] & LED[2] & LED[3] & LED[4] & LED[5] & LED[6] & LED[7] \\
+			\hline			
+			K12 & P14 & L12 & N14 & P13 & N12 & P12 & P11 \\
+			\hline
+		\end{tabular}
+		\caption{ Configuración de los pines de los LEDs para las "memorias" }
+		\label{tab:pinLEDs}
 	\end{table}
 	
 

@@ -314,7 +314,35 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un DivisorFrecuenc
 		    \label{fig:SimulacionEntidadVisualizacion}
 	\end{figure}
 
+\subsection {Código Bloque \textit{DecodificadoLED} :} \label{code:DecodificadorLED}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED.vhd}
 
+	Como se puede ver en la Figura (\ref{fig:DecodificadorLEDOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{DecodificadorLEDOK}
+		    \caption{Esquema exterior del Bloque Decodificador LED}
+		    \label{fig:DecodificadorLEDOK}
+	\end{figure}
+    Además podemos ver en la Figura (\ref{fig:DecodificadorLEDOKImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.9\textwidth ]{DecodificadorLEDOKImplementacion}
+		    \caption{Esquema interno del Bloque Decodificador LED}
+		    \label{fig:DecodificadorLEDOKImplementacion}
+	\end{figure}
+	
+\subsection {Código Bloque \textit{DecodificadoLED (testbench)} :} \label{code:DecodificadorLED_tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED_tb.vhd}
+
+    Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionDecodificadorLED}):
+
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionDecodificadorLED}
+		    \caption{Simulación del testbench del DecodificadorLED}
+		    \label{fig:SimulacionDecodificadorLED}
+	\end{figure}
 \subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
 Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento compoento de nuestro ascensor. \\ 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor.vhd}
