@@ -14,15 +14,12 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity BoqueadorPisoVoy is
-
-
     Port ( Motor : in  STD_LOGIC_VECTOR(1 downto 0);
            SensorVoy : in  STD_LOGIC_VECTOR (3 downto 0);
 			  CLK: in STD_LOGIC;
            PisoVoy : out  STD_LOGIC_VECTOR(3 downto 0);
 			  MemPisoVoy1, MemPisoVoy2 :  out  STD_LOGIC_VECTOR(3 downto 0)
-	);
-
+	 );
 end BoqueadorPisoVoy;
 
 architecture behavioral of BoqueadorPisoVoy is

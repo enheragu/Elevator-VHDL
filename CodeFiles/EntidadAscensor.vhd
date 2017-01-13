@@ -24,7 +24,7 @@ entity EntidadAscensor is
            A2              : out  STD_LOGIC;
            A3              : out  STD_LOGIC;
 			  Salida7s        : out  STD_LOGIC_VECTOR(7 downto 0);
-			  LED0,LED1,LED2,LED3,LED4,LED5,LED6,LED7 : OUT STD_LOGIC
+			  LED: OUT STD_LOGIC_VECTOR (7 downto 0)
 		  );
 end EntidadAscensor;
 
@@ -75,7 +75,7 @@ architecture Behavioral of EntidadAscensor is
 		PORT(
 			  MemPisoVoy1, MemPisoVoy2 :  in  STD_LOGIC_VECTOR(3 downto 0);
 			  CLK: in STD_LOGIC;
-			  LED0,LED1,LED2,LED3,LED4,LED5,LED6,LED7 : OUT STD_LOGIC
+			  LED: OUT STD_LOGIC_VECTOR (7 downto 0)
 		);
 	end component;
 		
@@ -129,14 +129,7 @@ begin
 		  MemPisoVoy1 => sigMemPisoVoy1,
 		  MemPisoVoy2 => sigMemPisoVoy2,
 		  CLK => CLK,
-		  LED0 => LED0,
-		  LED1 => LED1,
-		  LED2 => LED2,
-		  LED3 => LED3,
-		  LED4 => LED4,
-		  LED5 => LED5,
-		  LED6 => LED6,
-		  LED7 => LED7
+		  LED => LED
 	);
 
 
