@@ -31,36 +31,36 @@
 		    \label{fig:SimulacionDecodificador7s}
 	\end{figure}
 
-\subsection{Código Bloque \textit{Divisor de frecuencia}:} \label{code:DivisorFrecuencia}
+\subsection{Código Bloque \textit{Alternador de displays}:} \label{code:AlternadorDisplay}
 	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro displays comparten la salida de 7 bits, cambiando de un display a otro a través de los ánodos de contro. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
 
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia.vhd}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/AlternadorDisplay.vhd}
 	
-		Como se puede ver en la Figura (\ref{fig:BloqueDivisorFrecuenciaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+		Como se puede ver en la Figura (\ref{fig:BloqueAlternadorDisplayOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.6\textwidth ]{BloqueDvisorFrecuenciaOK}
-		    \caption{Esquema exterior del bloque DivisorFrecuencia}
-		    \label{fig:BloqueDivisorFrecuenciaOK}
+		    \caption{Esquema exterior del bloque AlternadorDisplay}
+		    \label{fig:BloqueAlternadorDisplayOK}
 	\end{figure}
-    Además podemos ver en la Figura (\ref{fig:BloqueDivisorFrecuenciaImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
+    Además podemos ver en la Figura (\ref{fig:BloqueAlternadorDisplayImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.9\textwidth ]{BloqueDvisorFrecuenciaImplementacion}
-		    \caption{Esquema interno del bloque DivisorFrecuencia}
-		    \label{fig:BloqueDivisorFrecuenciaImplementacion}
+		    \caption{Esquema interno del bloque AlternadorDisplay}
+		    \label{fig:BloqueAlternadorDisplayImplementacion}
 	\end{figure}
 
-\subsection{Código Bloque \textit{Divisor de frecuencia (testbench)}:} \label{code:DivisorFrecuencia_Tb}
-	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DivisorFrecuencia_tb.vhd}
+\subsection{Código Bloque \textit{Alternador de displays (testbench)}:} \label{code:AlternadorDisplay_Tb}
+	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/AlternadorDisplay_tb.vhd}
 	
-		Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionDivisorFrecuencia}):
+		Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionAlternadorDisplay}):
 
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.8\textwidth ]{SimulacionDivisorFrecuencia}
-		    \caption{Simulación del testbench del bloque DivisorFrecuencia}
-		    \label{fig:SimulacionDivisorFrecuencia}
+		    \includegraphics[width = 0.8\textwidth ]{SimulacionAlternadorDisplay}
+		    \caption{Simulación del testbench del bloque AlternadorDisplay}
+		    \label{fig:SimulacionAlternadorDisplay}
 	\end{figure}
 
 \subsection{Código Bloque \textit{PistoActual}:} \label{code:PisoActual}
@@ -284,7 +284,7 @@
 
 \subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
 
-Esta entidad, formada por tres bloques, dos Decodificador7s y un DivisorFrecuencia se encarga de mostrar en las cuatro pantallas de siete segmentos el estado del ascensor. \\ 
+Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDisplay se encarga de mostrar en las cuatro pantallas de siete segmentos el estado del ascensor. \\ 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadVisualizacion.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:VisualizacionOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.

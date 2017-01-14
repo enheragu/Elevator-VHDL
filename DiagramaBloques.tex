@@ -55,7 +55,7 @@
 	Como se puede observar el bloque Codigicador Binario-Decimal se utiliza dos veces. \\ 
 
 \subsection{Entidad \textit{Visualizacion}:} \label{bloque:Visualizacion}	
-	Esta entidad se encarga de gestionar la salida visual de los datos a través de los display de 7 segmentos. Para ello codifica dichas señales a los 7 bits del display para luego, mediante un divisor de frecuencia ir alternando cada display de forma que en cada uno de los cuatro se muestre la información debida.  \\ 
+	Esta entidad se encarga de gestionar la salida visual de los datos a través de los display de 7 segmentos. Para ello codifica dichas señales a los 7 bits del display para luego, mediante un alternador de displays ir alternando cada display de forma que en cada uno de los cuatro se muestre la información debida.  \\ 
 
 	Como se ve en la figura (\ref{fig:EntidadesAscensorE2}), engloba cuatro bloques bloques, que se detallan en apartados posteriores.
 	\begin{figure}[H]
@@ -88,7 +88,7 @@
 		    \caption{Diagrama Interfaz Bloque Decodificador a 7 segmentos}
 		    \label{fig:BloqueDecodificador7seg}
 	\end{figure}
-\subsection{Bloque \textit{Divisor de frecuencia}:} \label{bloque:DivisorFrecuencia}
+\subsection{Bloque \textit{Alternador de displays}:} \label{bloque:AlternadorDisplay}
 
 \subsection{Bloque \textit{PistoActual}:} \label{bloque:PisoActual}
     Como se ha dicho anteriormente en cada piso hay un final de carrera que detecta el paso del ascensor. El propósito de este bloque es el de filtrar dicha entrada de 4 bits. En este caso lo que interesa es saber en que piso estoy o en que piso he estado por última vez. Cuando el ascensor se encuentra entre dos pisos la entrada de los sensores será \textit{0000}, este bloque lo que hará será mantener en la salida del mismo el último piso por el que haya pasado el ascensor. \\ 
