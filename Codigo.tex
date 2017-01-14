@@ -1,4 +1,4 @@
-\subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
+﻿\subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
 	Como se a adelantado en la sección (\ref{bloque:Decodificador7s}) este bloque es el encargado de adaptar las señales de salida a los displays. Para ello se asigna a cada posible entrada (cada piso) con una señal de salida que codifica en los 7 segmentos el caracter deseado, incluyendo un caracter de error.
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
@@ -96,7 +96,14 @@
 	\end{figure}
 
 
-\subsection{Código Bloque \textit{Bloqueador PisoVoy}:} \label{code:BloqueadorpisoVoy}	
+\subsection{Código Bloque \textit{Bloqueador PisoVoy}:} \label{code:BloqueadorpisoVoy}
+
+    Como se ha adelantado en la sección (\ref{bloque:BloqueadorPisoVoy}) este bloque es el encargado de filtrar posibles lecturas que no nos interesen pasar al comparador y almacenar hasta tres lecturas válidas. Al poderse almacenar más de una lectura solo se tomarán como lecturas válidas los vectores que se correspondan con la codificación de cada piso, no son válidas dos pisos seguidos iguales. \\
+    
+    Cuando entre una lectura que no se corresponda con un piso se pasará el último piso válido detectado,  esta situación incluye tanto no llamarle desde ningún piso como posibles errores incoherentes que puedan darse, por ejemplo llamarlo simultáneamente desde más de un piso. \\
+    
+	En el momento que el ascensor está parado comprueba si hay valores almacenados, en dicho caso espera un tiempo y carga uno de ellos (en un orden determinado) en la salida que va al comparador. Sin embargo si no los hay la salida se mantiene en la última posición hasta que se introduce un nuevo piso. No obstante si está en movimiento la salida que va al comparador se mantiene constante, mientras que puedes almacenar un par de pisos más en dos variables diferentes.
+	
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/BloqueadorPisoVoy.vhd}
 	Como se puede ver en la Figura (\ref{fig:BloqueBloqueadorPisoVoyOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
