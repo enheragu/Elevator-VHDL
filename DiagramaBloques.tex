@@ -1,4 +1,4 @@
-\subsection{Entidad \textit{Acensor}:} \label{bloque:Ascensor}
+﻿\subsection{Entidad \textit{Acensor}:} \label{bloque:Ascensor}
     Esta entidad engloba el funcionamiento del ascensor al completo, será la última etapa y la que se sintetizará sobre la FPGA.\\
 
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:EntidadIAscensor}:
@@ -89,6 +89,11 @@
 		    \label{fig:BloqueDecodificador7seg}
 	\end{figure}
 \subsection{Bloque \textit{Alternador de displays}:} \label{bloque:AlternadorDisplay}
+    Este bloque es el encargado de gestionar la salida del Display alternando de un digito a otro de forma que en cada uno se muestre la información debida, debemos (dividir la frecuencia de reloj entre los cuatro dígitos). \\
+    
+	Como se ha dicho anteriormente cada digito debe contener 8 segmentos (pines de control), del segmento 7 al 1 son de las diferentes partes del digito y el último segmento (0) es el pin que controla el punto (dp) del digito, activos a nivel bajo. El pin que selecciona el digito que muestra en cada momento (ánodo de control) es activo a nivel alto. \\
+	
+	Como se puede apreciar en el siguiente diagrama la interfaz de este bloque tiene cinco entradas, 4 vectores de 7 bits, que contienen la información a mostrar  y un reloj que utilizaremos para hacer síncrono el proceso. Y cinco salidas, cuatro de ellas son enteros que indican cual es el digito a revelar y un vector de 4 bits, que codifica la información a mostrar del digito elegido.
 
 \subsection{Bloque \textit{PistoActual}:} \label{bloque:PisoActual}
     Como se ha dicho anteriormente en cada piso hay un final de carrera que detecta el paso del ascensor. El propósito de este bloque es el de filtrar dicha entrada de 4 bits. En este caso lo que interesa es saber en que piso estoy o en que piso he estado por última vez. Cuando el ascensor se encuentra entre dos pisos la entrada de los sensores será \textit{0000}, este bloque lo que hará será mantener en la salida del mismo el último piso por el que haya pasado el ascensor. \\ 
@@ -110,6 +115,11 @@
 	Se puede consultar el código VHDL de este módulo en el Apartado \ref{code:PisoActual} así como el código de su testbench correspondiente en el Apartado \ref{code:PisoActual_tb}.\\ 
 
 \subsection{Bloque \textit{Bloqueador PisoVoy}:}
+    Mediante 4 interruptores (uno por planta) se ha codificado la llamada al ascensor, indicando a que piso debe ir el ascensor. La finalidad de este bloque es filtrar dicha entrada de 4 bits, nos interesa saber a qué piso debe ir el ascensor o a que piso ha ido por última vez. Pudiendo almacenar hasta tres pisos, a los que debe ir, en orden y parando un tiempo antes de ir al siguiente piso almacenado. \\
+    
+	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, un vector de 4 bits (los botones de cada piso), un vector de 2 bits (estado del motor) y el reloj que utilizaremos para hacer síncrono el proceso. Y tres salidas, vectores de 4 bits, codificando el piso al que debe ir el ascensor (PisoVoy) y dos pisos almacenados en las variables auxiliares (MemPisoVoy1 y MemPisoVoy2), codificando los piso a los que el usuario desea ir. \\
+	
+	Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\
     
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueBloqueadorPisoVoy}:
     
@@ -176,6 +186,10 @@
 	\end{figure}
 
 \subsection {Bloque \textit{DecodificadoLED} :} \label{bloque:DecodificadorLED}
-
+    Este bloque se encarga de gestionar la salida de los leds. Usaremos los 8 leds de la placa, mostrando así dos pisos almacenados codificados según indicamos en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\
+    
+	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, dos vectores de 4 bits (dos pisos diferentes) y un reloj que utilizaremos para hacer síncrono el proceso.
+	
+	Y una salida, un vector de 8 bits, que indica los leds que debe encender. Los cuatro bits de la derecha corresponden al primer piso almacenado y los otros cuatro al último piso almacenado.
     
 	
