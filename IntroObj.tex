@@ -1,4 +1,4 @@
-
+﻿
 
 \subsection{Objetivos:}
     \begin{itemize}
@@ -9,6 +9,40 @@
     \end{itemize}
     
 \subsection{Funcionamiento general del Ascensor y requisitos:}
+
+   El trabajo consiste en diseñar el controlador de un ascensor único en una vivienda.
+    \begin{itemize}
+        \item Requisitos mínimos:
+        \begin{itemize}
+    		    \item El ascensor debe tener un mínimo de 4 pisos.
+    		    \item Las entradas al circuito serán, por un lado, el piso al que el usuario desea ir y el piso en el que está el ascensor en un momento dado.
+    		    \item Hay 2 salidas, la del motor (2 bits) y la de la puerta (1 bit).
+    		    \item El ascensor debe ir al piso indicado, cuando llegue abrirá las puertas que permanecerán así hasta que se reciba otra llamada.
+    		    \item Si mientras que el ascensor se mueve, se pulsan otros botones no se debe hacer caso.
+    		    \item Utilizar los LEDs y los Displays para visualizar la información.
+    	\end{itemize}
+        \item Funcionalidad extra
+        \begin{itemize}
+            \item [1-] Añadimos dos salidas. 
+            \begin{itemize}
+        		    \item Piso al que el usuario desea ir.
+                \item Piso en el que está el ascensor.
+            \end{itemize}  
+            Mostrando ambas por dos dígitos distintos del Display.
+            \item [2-] Aumentamos el número de pisos que puede almacenar simultáneamente el programa a tres, debe ir a cada uno de ellos en el mismo orden que fueron introducidos.
+            \begin{itemize}
+        		    \item Se muestran todos los pisos almacenados.
+      	  	    \item Se mueva o no el ascensor, se hace caso de los botones pulsados mientras alguna de las tres variables esté "vacía".
+    	    \end{itemize}
+	    \end{itemize}
+        \item Puertos usados:
+        \begin{itemize}
+     	   	\item Pulsadores de la FPGA, se usan para la entrada del piso en el que está el ascensor en un momento dado, representan finales de carrera (uno por planta).
+    		    \item Cuatro Interruptores, empleados para introducir el piso al que el usuario desea ir, representan los botones del ascensor (uno por planta).
+    		    \item Cuatro dígitos del Display, dedicados a mostrar el estado del motor, el estado de la puerta el piso en el que está el ascensor y el piso al que va el ascensor.
+    		    \item LEDs de la FPGA, utilizados para representar los dos pisos almacenados a los que posteriormente debe ir el ascensor.
+    	\end{itemize}
+	\end{itemize}
 
 \subsection{Placa Spartan-3 Starter Kit Board} \label{subsection:Spartan-3}
     
