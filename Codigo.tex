@@ -260,6 +260,10 @@
 		    \label{fig:SimulacionMotorPuerta}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y el Cuadro (\ref{tab:tabla1ApendiceB}) del Apéndice \ref{app:7segmentos} donde podemos ver como se codifican internamente el funcionamiento del motor en binario y la información a sacar por el Display. \\
+	
+	Según podemos observar logramos la conducta deseada: si el motor sube la salida del motor debe corresponder con el carácter 'S' y la puerta debe estar cerrada carácter 'C', sin embargo cuando el motor baja la salida del motor debe corresponder con el carácter 'B' y la puerta debe estar cerrada carácter 'C' y finalmente si el motor se para la salida del motor debe corresponder con el carácter '-' y la puerta debe estar abierta carácter 'A'.
+
 \subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
 
