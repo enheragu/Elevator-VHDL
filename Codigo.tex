@@ -398,6 +398,11 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
 		    \caption{Simulación del testbench del DecodificadorLED}
 		    \label{fig:SimulacionDecodificadorLED}
 	\end{figure}
+
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifica internamente el número de piso. \\
+    
+    Según podemos observar logramos la conducta deseada: en función de los pisos que entren a este bloque, se encienden los leds correspondientes. En el caso de que una o ambas entradas no tengan ningún piso almacenado (todo ceros) no se encenderá ningún led de su conjunto, su salida será todo ceros.
+
 \subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
 Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento compoento de nuestro ascensor. \\ 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor.vhd}
