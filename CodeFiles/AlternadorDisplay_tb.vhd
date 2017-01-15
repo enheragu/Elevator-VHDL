@@ -1,24 +1,24 @@
  -------------------------------------------------------------------------------
- -- Title : DivisorFrecuencia (tb)
+ -- Title : AlternadorDisplay (tb)
  -- Project : Elevator-VHDL
  -------------------------------------------------------------------------------
- -- File : DivisorFrecuencia_tb.vhd
+ -- File : AlternadorDisplay_tb.vhd
  -- Author :  AlbertoBB
  -- Created : 2016/12/26
  -- Last modified : 2016/12/26
  -------------------------------------------------------------------------------
  -- Description :
- -- Implements the testbench of DivisorFrecuencia.vhd
+ -- Implements the testbench of AlternadorDisplay.vhd
  -------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
-ENTITY DivisorFrecuencia_tb IS
-END DivisorFrecuencia_tb;
+ENTITY AlternadorDisplay_tb IS
+END AlternadorDisplay_tb;
  
-ARCHITECTURE behavior OF DivisorFrecuencia_tb IS 
+ARCHITECTURE behavior OF AlternadorDisplay_tb IS 
     -- Component Declaration for the Unit Under Test (UUT)
-    COMPONENT DivisorFrecuencia
+    COMPONENT AlternadorDisplay
     PORT(
          ControlMotor7s  : IN  std_logic_vector(6 downto 0);
          ControlPuerta7s : IN  std_logic_vector(6 downto 0);
@@ -68,7 +68,7 @@ ARCHITECTURE behavior OF DivisorFrecuencia_tb IS
 
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
-   uut: DivisorFrecuencia PORT MAP (
+   uut: AlternadorDisplay PORT MAP (
           ControlMotor7s => ControlMotor7s,
           ControlPuerta7s => ControlPuerta7s,
           PisoVoy7s => PisoVoy7s,

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
- -- Title : DivisorFrecuencia
+ -- Title : AlternadorDisplay
  -- Project : Elevator-VHDL
  -------------------------------------------------------------------------------
- -- File : Comparador.vhd
+ -- File : AlternadorDisplay.vhd
  -- Author : AlbertoBB
  -- Created : 2017/01/10
  -- Last modified : 2017/01/11
@@ -13,7 +13,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity DivisorFrecuencia is
+entity AlternadorDisplay is
     Port ( ControlMotor7s  : in  STD_LOGIC_VECTOR(6 downto 0);
            ControlPuerta7s : in  STD_LOGIC_VECTOR(6 downto 0);
            PisoVoy7s       : in  STD_LOGIC_VECTOR(6 downto 0);
@@ -25,9 +25,9 @@ entity DivisorFrecuencia is
            A3              : out  STD_LOGIC;
 		   Salida7s        : out  STD_LOGIC_VECTOR(6 downto 0)
 	);
-end DivisorFrecuencia;
+end AlternadorDisplay;
 
-architecture Behavioral of DivisorFrecuencia is
+architecture Behavioral of AlternadorDisplay is
 		signal contador: integer range 0 to 12500 := 0; --Se cambia en la implementacion física
 		-- signal contador: integer range 0 to 16 := 0; 
 		-- salidas
