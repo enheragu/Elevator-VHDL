@@ -294,6 +294,10 @@
 		    \label{fig:SimulacionEntidadInterfazEntrada}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} y el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifican internamente el número de piso en 4 bits y el funcionamiento del motor. Este testbench se realizó antes de añadir la posibilidad de almacenar hasta tres pisos destino a la vez. \\
+	
+	Según podemos observar logramos la conducta deseada: la salida pisoestoy solo cambia su estado cuando entra una lectura válida (corresponde con uno de los cuatro pisos) por sensorvoy, sin embargo la salida piso voy cambia su estado cuando el motor esta parado y la lectura de la entrada sensorvoy es apropiada (corresponde con uno de los cuatro pisos).
+
 \subsection{Código Entidad \textit{Control Ascensor}:} \label{code:ControlAscensor}
 	Como se ha explicado en la sección (\ref{bloque:ControlAscensor}) esta entidad coordina y encapsula lo necesario para la toma de decisiones llevada a cabo por nuestro sistema, esto incluye el comparador y el codificador de binario a entero vistos anteriormente. \\ 
 
