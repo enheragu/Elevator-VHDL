@@ -191,6 +191,8 @@
 		    \label{fig:SimulacionDecodificadorBinarioEntero}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifica internamente el número de piso. También hay que aclarar que la salida es de tipo integer aunque en la imagen se muestra como una salida binaria (entero - binario: 0 - 0, 1 - 1, 2 - 10, 3 - 11, 4 - 100).
+
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
 	Como se ha visto en la seccion (\ref{bloque:Comparado}) este bloque compara las dos señales enteras; si el piso objetivo está por encima del actual el motor sube y la puerta se cierra, si el piso objetivo es igual al piso actual el motor está parado y la puerta abierta, y finalmente, si el piso objetivo es menor que el piso actual el motor baja manteniendo la puerta cerrada durante el proceso. A continuación se presenta el código del bloque: \\ 
 
