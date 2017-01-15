@@ -366,6 +366,8 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
 		    \label{fig:SimulacionEntidadVisualizacion}
 	\end{figure}
 
+	Como podemos observar el comportamiento obtenido es el deseado para su función, entran cuatro vectores dos de ellos de 4 bits y los otros dos de 7 bits. Mientras que por la salida se alternan durante el mismo tiempo los cuatro digitos para no pisarse la información.
+
 \subsection {Código Bloque \textit{DecodificadoLED} :} \label{code:DecodificadorLED}
 	En este bloque vamos a mostrar en los ocho led de la FPGA el estado de los dos pisos almacenados, informando asi al usuario. Estos LEDs son activos a nivel lógico alto. Tenemos un toral de 8, hemos repartido los cuatro primeros para el primer piso almacenado y los cuatro siguientes para el segundo; empezanado a contar desde la derecha.
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED.vhd}
