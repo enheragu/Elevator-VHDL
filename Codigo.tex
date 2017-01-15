@@ -67,6 +67,8 @@
 		    \label{fig:SimulacionAlternadorDisplay}
 	\end{figure}
 
+	Como podemos observar el comportamiento obtenido es el deseado para su función, entran cuatro vectores 7 segmentos mientras que por la salida se alternan durante el mismo tiempo los cuatro digitos para no pisarse la información.
+
 \subsection{Código Bloque \textit{PistoActual}:} \label{code:PisoActual}
 	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con ela codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor de encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades: \\ 
 
