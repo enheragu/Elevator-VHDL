@@ -31,9 +31,9 @@ end EntidadVisualizacion;
 architecture Behavioral of EntidadVisualizacion is
 
 
-	component DivisorFrecuencia 
+	component AlternadorDisplay 
 	port (
-		     ControlMotor7s  : in  STD_LOGIC_VECTOR(6 downto 0);
+           ControlMotor7s  : in  STD_LOGIC_VECTOR(6 downto 0);
            ControlPuerta7s : in  STD_LOGIC_VECTOR(6 downto 0);
            PisoVoy7s         : in  STD_LOGIC_VECTOR(6 downto 0);
            PisoEstoy7s       : in  STD_LOGIC_VECTOR(6 downto 0);
@@ -68,7 +68,7 @@ begin
 		SalidaPiso7s => sigPisoEstoy7s
 	);
 	
-	Inst_DivisorFrecuencia: DivisorFrecuencia port map (
+	Inst_AlternadorDisplay: AlternadorDisplay port map (
 	     ControlMotor7s => ControlMotor7s,
         ControlPuerta7s => ControlPuerta7s, 
         PisoVoy7s => sigPisoVoy7s,
