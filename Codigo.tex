@@ -428,3 +428,9 @@ Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento comp
 		    \caption{Simulación del testbench de la entidad SimulacionEntidadAscensor(Subiendo)}
 		    \label{fig:SimulacionEntidadAscensor}
 	\end{figure}
+
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} y el Cuadro (\ref{tab:tabla1ApendiceB}) del Apéndice \ref{app:7segmentos} donde podemos ver como se codifican internamente el funcionamiento del motor en binario y la información a sacar por el Display. \\ 
+	
+	Este testbench se realizó antes de añadir la posibilidad de almacenar hasta tres pisos destino a la vez. Las salidas enteras indican que digito del Display se muestra en cada cuarto del periodo de reloj (en placa lo veremos todo simultáneo, el reloj es de 50MHz) y la salida7s corresponde a los segmentos encendidos del digito indicado.\\
+	
+	Según podemos observar logramos la conducta deseada: Cuando el ascensor se encuentra en el primer piso (sensorestoy 0001) y el usuario desea ir al cuarto piso (sensorvoy 1000). El motor debe subir (caracter 'S') corresponde con a0, la puerta esta cerrada (caracter 'C') a2, el piso al que el usuario desea ir es el cuerto (caracter '4') a3 y por último en el digito a4 se mostrará el piso en el que esta el ascensor (caracter '1').
