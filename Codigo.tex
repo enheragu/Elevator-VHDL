@@ -225,6 +225,10 @@
 		    \label{fig:SimulacionComparador}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifica internamente el funcionamiento del motor. También hay que aclarar que las entradas son de tipo integer aunque en la imagen se muestren como binarias (entero - binario: 0 - 0, 1 - 1, 2 - 10, 3 - 11, 4 - 100). \\
+	
+	Según podemos observar logramos la conducta deseada: si el piso al que vas (PisoVoy) es mayor que el piso en el que estas (PisoEstoy) el motor sube, sin embargo cuando ocurre lo contrario el motor baja y finalmente si ambos pisos son el mismo el motor se para.
+
 \subsection{Código Bloque \textit{ Simulacion Motor Puerta}:} \label{code:MotorPuerta}
 	Como se ha visto en la sección (\ref{boque:MotorPuerta}) al no tener motor y puerta reales se ha optado por sacar su reacción a traves de los displays. Este bloque es similar al bloque Decodificador7s (se puede encontrar la descripción en la seccion \ref{bloque:Decodificador7s} así como su codificación en la sección \ref{code:Decodificador7s} para observar las similitudes). Lo que hace es tomar la señal de entrada de dos bits, que codifica la reacción del motor y la puerta para transformarla en un caracter que se podrá mostrar a través del display de 7 segmentos. La codificación en VHDL se puede ver a continuación: \\ 
 
