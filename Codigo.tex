@@ -31,6 +31,10 @@
 		    \label{fig:SimulacionDecodificador7s}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} y el Cuadro (\ref{tab:tabla1ApendiceB}) del Apéndice \ref{app:7segmentos} donde podemos ver como se codifican internamente el número de piso en 4 bits y el número de piso en binario para mostrar la información en el Display 7 segmentos. \\
+	
+	Según podemos observar logramos la conducta deseada: piso 1 la salida es el carácter 1, piso 2 la salida carácter 2, piso 3 la salida carácter 3, piso 4 la salida carácter 4 y comprobamos que al introducir entradas erróneas la salida es el carácter error.
+
 \subsection{Código Bloque \textit{Alternador de displays}:} \label{code:AlternadorDisplay}
 	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro displays comparten la salida de 7 bits, cambiando de un display a otro a través de los ánodos de contro. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
 
