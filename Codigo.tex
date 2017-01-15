@@ -330,6 +330,10 @@
 		    \label{fig:SimulacionEntidadControlAscensor}
 	\end{figure}
 
+	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} y el Cuadro (\ref{tab:tabla2ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifican internamente el número de piso en 4 bits y el funcionamiento del motor. \\
+	
+	Según podemos observar logramos la conducta deseada, la salida controlmotor es coherente con las entradas pisovoy y pisoestoy intriducidas en cada momento. Cuando las entradas son iguales el motor se para, sin embargo al ser mayor el pisovoy respecto de pisoestoy el motor sube y  finalmente al ser menor pisovoy respecto de pisoestoy el motor baja.
+
 \subsection{Código Entidad \textit{Visualizacion}:} \label{code:Visualizacion}
 
 Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDisplay se encarga de mostrar en las cuatro pantallas de siete segmentos el estado del ascensor. \\ 
