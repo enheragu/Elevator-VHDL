@@ -132,6 +132,24 @@
 		    \label{fig:SimulacionBloqueadorPisoVoy}
 	\end{figure}
 
+	\begin{itemize}
+	    \item Ascensor Parado y nada pulsado se mantiene la situación donde se inicializa.
+	    \item Ascensor Parado y pulso planta 2 se guarda en PisoVoy la planta pulsada.
+	    \item Ascensor en movimiento y nada pulsado se mantiene la situación anterior.
+	    \item Ascensor en movimiento y pulso planta 4: PisoVoy "lleno" se guarda en MemPisoVoy1 la planta pulsada.
+	    \item Ascensor en movimiento y pulso planta 1: PisoVoy y MemPisoVoy1 "lleno" se guarda en MemPisoVoy2 la planta pulsada.
+	    \item Ascensor en movimiento y nada pulsado.
+	    \item Ascensor Parado y nada pulsado mantiene un tiempo la situación anterior.
+	    \item Ascensor Parado, nada pulsado: MemPisoVoy1 "lleno", tras pasar el tiempo delay pasa el dato de MemPisoVoy1 a PisoVoy (en un ciclo de reloj). 
+	    \item Ascensor Parado, nada pulsado: MemPisoVoy2 "lleno" pasa el dato de MemPisoVoy2 a MemPisoVoy1 (en un ciclo de reloj).
+	    \item Ascensor en movimiento y nada pulsado.				 
+	    \item Ascensor Parado y nada pulsado mantiene un tiempo la situación anterior.
+	    \item Ascensor Parado, nada pulsado: MemPisoVoy1 "lleno", tras pasar el tiempo delay pasa el dato de MemPisoVoy1 a PisoVoy (en un ciclo de reloj). 
+	    \item Ascensor Parado, nada pulsado: MemPisoVoy2 "vacío" pasa el dato de MemPisoVoy2 a MemPisoVoy1 (en un ciclo de reloj).
+	    \item Ascensor en movimiento y nada pulsado.
+	    \item Ascensor Parado y nada pulsado y nada en variables de almacenamiento se mantiene la situación anterior.
+	\end{itemize}
+
 \subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{code:DecodificadorBinarioEntero}
 	Como se ha visto en la sección (\ref{bloque:DecodificadorBinarioEntero}) este bloque pasa de la codificación binaria que se ha dado a cada piso a su equivalente entero para su posterior comparación. Se puede ver el código de dicho bloque a continuación: \\ 
 
