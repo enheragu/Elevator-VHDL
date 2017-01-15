@@ -322,6 +322,7 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
 	\end{figure}
 
 \subsection {Código Bloque \textit{DecodificadoLED} :} \label{code:DecodificadorLED}
+	En este bloque vamos a mostrar en los ocho led de la FPGA el estado de los dos pisos almacenados, informando asi al usuario. Estos LEDs son activos a nivel lógico alto. Tenemos un toral de 8, hemos repartido los cuatro primeros para el primer piso almacenado y los cuatro siguientes para el segundo; empezanado a contar desde la derecha.
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:DecodificadorLEDOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
