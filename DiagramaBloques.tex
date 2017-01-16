@@ -187,7 +187,7 @@
 
 	\begin{figure}[H]
 		    \centering
-		    \includegraphics[width = .85\textwidth ]{MotorPuerta}
+		    \includegraphics[width = .85\textwidth ]{BloqueMotorPuerta}
 		    \caption{Representación del bloque MotorPuerta}
 		    \label{fig:MotorPuerta}
 	\end{figure}
@@ -204,9 +204,9 @@
 \subsection {Bloque \textit{DecodificadoLED} :} \label{bloque:DecodificadorLED}
     Este bloque se encarga de gestionar la salida de los leds. Usaremos los 8 leds de la placa, mostrando así dos pisos almacenados codificados según indicamos en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\
     
-	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, dos vectores de 4 bits (dos pisos diferentes) y un reloj que utilizaremos para hacer síncrono el proceso.
+	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, dos vectores de 4 bits (dos pisos diferentes) y un reloj que utilizaremos para hacer síncrono el proceso. \\ 
 	
-	Y una salida, un vector de 8 bits, que indica los leds que debe encender. Los cuatro bits de la derecha corresponden al primer piso almacenado y los otros cuatro al último piso almacenado.
+	Y una salida, un vector de 8 bits, que indica los leds que debe encender. Los cuatro bits de la derecha corresponden al primer piso almacenado y los otros cuatro al último piso almacenado. \\ 
     
 	La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueDecodificadorLED}:
     
