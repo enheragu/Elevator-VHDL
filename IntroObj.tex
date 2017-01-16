@@ -39,16 +39,16 @@
         \begin{itemize}
      	   	\item Pulsadores de la FPGA, se usan para la entrada del piso en el que está el ascensor en un momento dado, representan finales de carrera (uno por planta).
     		    \item Cuatro Interruptores, empleados para introducir el piso al que el usuario desea ir, representan los botones del ascensor (uno por planta).
-    		    \item Cuatro dígitos del Display, dedicados a mostrar el estado del motor, el estado de la puerta el piso en el que está el ascensor y el piso al que va el ascensor.
+    		    \item Cuatro dígitos del Display, dedicados a mostrar el estado del motor, el estado de la puerta, el piso en el que está el ascensor y el piso al que va el ascensor.
     		    \item LEDs de la FPGA, utilizados para representar los dos pisos almacenados a los que posteriormente debe ir el ascensor.
     	\end{itemize}
 	\end{itemize}
 
 \subsection{Placa Spartan-3 Starter Kit Board} \label{subsection:Spartan-3}
     
-    Para la implementación de este proyecto y si realización sobre un soporte físico real se utilizará la placa Spartan-3 Starter Kit Board de Xilinx, que incluye la FPGA así como otros componentes que nos vendrán bien a la hora de simular el comportamiento del ascensor. \\ 
+    Para la implementación de este proyecto y su realización sobre un soporte físico real se utilizará la placa Spartan-3 Starter Kit Board de Xilinx, que incluye la FPGA así como otros componentes que nos vendrán bien a la hora de simular el comportamiento del ascensor. \\ 
 
-    En las figuras que se muestran a continuación se pueden ver la distribución de los componentes del Kit:
+    En las figuras que se muestran a continuación se puede ver la distribución de los componentes del Kit:
 
     \begin{figure}[H]
             \centering
@@ -83,7 +83,7 @@
 
     Como se puede ver en la figura los 4 displays comparten 8 pines de control, para elegir un display u otro están los Ánodos de control, en la tabla (\ref{tab:anodoControl}). \\ 
 
-    Es importante tener en cuenta que los cuatro display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente. Cabe destacar que estos displays son activos a nivel bajo. \\ 
+    Es importante tener en cuenta que los cuatro digitos del display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente. Cabe destacar que estos displays son activos a nivel bajo. \\ 
 
     \begin{table}[H]
             \centering
@@ -177,10 +177,11 @@
 
     En los siguientes apartados de la memoria se puede encontrar la explicación detallada del funcionamiento y codificación de la lógica del ascensor descrito, concretamente:
     \begin{itemize}
-        \item Apartado \ref{section:DiagBloques}: Se detalla el funcionamiento interno de cada entidad o arquitectura así como su interfaz. A su vez se describe la relación entre las diferentes entidades
+        \item Apartado \ref{section:DiagBloques}: Se detalla el funcionamiento interno de cada entidad o arquitectura así como su interfaz. A su vez se describe la relación entre las diferentes entidades.
         \item Apartado \ref{section:Codigo}: Se adjunta la programación de cada entidad o arquitectura así como su correspondiente testbech.
         \item Apartado \ref{section:PruebasYResultados}: Se comentan los aspectos prácticos de como se ha cargado esta información en la FPGA así como los resultados obtenidos.
         \item Apéndice \ref{app:codEntSal}: Se adjuntan las tablas donde se especifica la codificación que se ha utilizado para el funcionamiento interno del ascensor.
+	\item Apéndice \ref{app:7segmentos}: Se adjunta la tabla donde se especifica la codificación que se ha utilizado para mostrar la información por el Display.
     \end{itemize}
     
     Todo el proyecto, tanto el documento en código \LaTeX\  como los ficheros VHDL se pueden encontrar en Github \faGithub\ en el siguiente enlace: https://github.com/enheragu/Elevator-VHDL
