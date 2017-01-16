@@ -1,4 +1,9 @@
-﻿\subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
+﻿En este apartado, antes de empezar a desgranarlo tenemos que añadir un comentario. Nosotros realizamo el código solo incluyendo el Clk en el bloque Amplificador de Dispay, de esta forma realizamos el código y sus respectivos testbench. Todo el codigo funcionaba perfectamente, pero tras el paso a la FPGA, nos dimos cuenta de que era necesario añadir el Clk en todos los Bloques menos en el Decofificador a 7 segmentos y en el Codificador Binario a decimal. Dado el trabajo que suponía volver a realizar otra vez todos los testbench se lo comunicamos a nuestro profesor y nos dijo que no era  necesario, ya que habíamos hecho las modificaciones pertinentes y comprobamos que funcionaba en la FPGA.  \\
+
+De todas formas incluimos el Clk en gran parte de los bloques, menos en: ControlMotorPuerta, Comparador y CodificadorBinario-Decimal. Tampoco en las entidades Entrada y Control ascensor. Se informa así al lector del porqué no hay Clk en estos testbench.  \\
+
+ 
+ \subsection{Código Bloque \textit{Decodificador a 7 segmentos}:} \label{code:Decodificador7s}
 	Como se a adelantado en la sección (\ref{bloque:Decodificador7s}) este bloque es el encargado de adaptar las señales de salida a los displays. Para ello se asigna a cada posible entrada (cada piso) con una señal de salida que codifica en los 7 segmentos el caracter deseado, incluyendo un caracter de error.
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Decodificador7s.vhd}
