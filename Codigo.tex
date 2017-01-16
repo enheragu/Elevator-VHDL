@@ -36,7 +36,7 @@
 	Según podemos observar logramos la conducta deseada: piso 1 la salida es el carácter 1, piso 2 la salida carácter 2, piso 3 la salida carácter 3, piso 4 la salida carácter 4 y comprobamos que al introducir entradas erróneas la salida es el carácter error.
 
 \subsection{Código Bloque \textit{Alternador de displays}:} \label{code:AlternadorDisplay}
-	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro displays comparten la salida de 7 bits, cambiando de un display a otro a través de los ánodos de contro. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
+	Como se ha visto en la seccción (\ref{subsection:Spartan-3}) los cuatro dígitos del displays comparten la salida de 7 bits, cambiando de un dígito a otro a través de los ánodos de control. En este bloque se va alternando de un ánodo a otro para mostrar por cada display la salida correspondiente sin que se pise la información y a una frecuencia suficiente para que el parpadeo no sea apreciable. A continuación se puede ver el código que codifica esta funcionalidad: \\ 
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/AlternadorDisplay.vhd}
 	
@@ -69,8 +69,8 @@
 
 	Como podemos observar el comportamiento obtenido es el deseado para su función, entran cuatro vectores 7 segmentos mientras que por la salida se alternan durante el mismo tiempo los cuatro digitos para no pisarse la información.
 
-\subsection{Código Bloque \textit{PistoActual}:} \label{code:PisoActual}
-	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con ela codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor de encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades: \\ 
+\subsection{Código Bloque \textit{PisoActual}:} \label{code:PisoActual}
+	Como se ha explicado en la sección (\ref{bloque:PisoActual}) este bloque filtrará posibles lecturas que no nos interese pasar al comparador. De esta forma solo tomará como válidas los vectores que se correspondan con la codificación de cada piso. Cuando entre una lectura que no se corresponde con ello se pasará el último piso detectado. Esta situación incluye cuando el ascensor se encuentra entre dos pisos (SensorEstoy = 0000) o posibles errores incoherentes que puedan darse debido a la electrónica como podría ser una lectura con valores "0110" o similar. A continuación se puede ver el código que codifica dichas funcionalidades: \\ 
 
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/PisoActual.vhd}
     
@@ -89,7 +89,7 @@
 		    \label{fig:BloquePisoActualImplementacion}
 	\end{figure}
 
-\subsection{Código Bloque \textit{PistoActual (testbench)}:} \label{code:PisoActual_tb}
+\subsection{Código Bloque \textit{PisoActual (testbench)}:} \label{code:PisoActual_tb}
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/PisoActual_tb.vhd}
     
     Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionPisoActual}):
@@ -264,7 +264,7 @@
 	
 	Según podemos observar logramos la conducta deseada: si el motor sube la salida del motor debe corresponder con el carácter 'S' y la puerta debe estar cerrada carácter 'C', sin embargo cuando el motor baja la salida del motor debe corresponder con el carácter 'B' y la puerta debe estar cerrada carácter 'C' y finalmente si el motor se para la salida del motor debe corresponder con el carácter '-' y la puerta debe estar abierta carácter 'A'.
 
-\subsection{Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
+\subsection{Código Entidad \textit{Interfaz Entrada}:} \label{code:InterfazEntrada}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadInterfazEntrada.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:EntidadInterfazEntradaOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -368,7 +368,7 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
 
 	Como podemos observar el comportamiento obtenido es el deseado para su función, entran cuatro vectores dos de ellos de 4 bits y los otros dos de 7 bits. Mientras que por la salida se alternan durante el mismo tiempo los cuatro digitos para no pisarse la información.
 
-\subsection {Código Bloque \textit{DecodificadoLED} :} \label{code:DecodificadorLED}
+\subsection {Código Bloque \textit{DecodificadorLED} :} \label{code:DecodificadorLED}
 	En este bloque vamos a mostrar en los ocho led de la FPGA el estado de los dos pisos almacenados, informando asi al usuario. Estos LEDs son activos a nivel lógico alto. Tenemos un toral de 8, hemos repartido los cuatro primeros para el primer piso almacenado y los cuatro siguientes para el segundo; empezanado a contar desde la derecha.
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED.vhd}
 
@@ -387,7 +387,7 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
 		    \label{fig:DecodificadorLEDImplementacion}
 	\end{figure}
 	
-\subsection {Código Bloque \textit{DecodificadoLED (testbench)} :} \label{code:DecodificadorLED_tb}
+\subsection {Código Bloque \textit{DecodificadorLED (testbench)} :} \label{code:DecodificadorLED_tb}
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/DecodificadorLED_tb.vhd}
 
     Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionDecodificadorLED}):
@@ -403,8 +403,8 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
     
     Según podemos observar logramos la conducta deseada: en función de los pisos que entren a este bloque, se encienden los leds correspondientes. En el caso de que una o ambas entradas no tengan ningún piso almacenado (todo ceros) no se encenderá ningún led de su conjunto, su salida será todo ceros.
 
-\subsection{Código Código Entidad \textit{Acensor}:} \label{code:Acensor}
-Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento compoento de nuestro ascensor. \\ 
+\subsection{Código Entidad \textit{Acensor}:} \label{code:Acensor}
+Esta entidad engloba todas las anteriores para obtener así el funcionamiento completo de nuestro ascensor. \\ 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor.vhd}
 
 	Como se puede ver en la Figura (\ref{fig:EntidadAscensorOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
@@ -422,7 +422,7 @@ Esta entidad,engobamos todas las anteriores para obtner asi funcinonamiento comp
 		    \label{fig:EntidadAscensorImplementacion}
 	\end{figure}
 
-\subsection{Código Código Entidad \textit{Acensor (testbench)}:} \label{code:Acensor_tb}
+\subsection{Código Entidad \textit{Acensor (testbench)}:} \label{code:Acensor_tb}
 \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadAscensor_tb.vhd}
 
     Utilizando este testbench se obtiene el comportamiento que se puede ver en la Figura (\ref{fig:SimulacionEntidadAscensor}):
