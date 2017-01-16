@@ -1,4 +1,4 @@
-﻿\subsection{Entidad \textit{Acensor}:} \label{bloque:Ascensor}
+﻿\subsection{Entidad \textit{Ascensor}:} \label{bloque:Ascensor}
     Esta entidad engloba el funcionamiento del ascensor al completo, será la última etapa y la que se sintetizará sobre la FPGA.\\
 
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:EntidadIAscensor}:
@@ -33,7 +33,7 @@
 \subsection{Entidad \textit{Interfaz Entrada}:} \label{bloque:InterfazEntrada}
 	Esta entidad se encarga de gestionar los datos de las entradas para adaptarlos al funcionamiento interno de nuestro sistema, en este caso se encarga de codificar y modular correctamente las señales de los sensores del piso al que voy y del piso en que estoy. \\ 
 
-	Como se ve en la figura (\ref{fig:EntidadesAscensorE1}), engloba dos bloques, que se desgran en los siguientes apartados.
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE1}), engloba dos bloques, que se describen en los siguientes apartados.
 	\begin{figure}[H]
 		    \centering
 		    \includegraphics[width = .85\textwidth ]{EntidadAscensorInterior(E1)}
@@ -41,10 +41,18 @@
 		    \label{fig:EntidadesAscensorE1}
 	\end{figure}
 
+	Se puede ver en la figura (\ref{fig:EntidadInterfazEntrada}) que este bloque tiene tres entradas, las lecturas del piso actual y el piso objetivo y el reloj que utilizaremos para hacer síncrono el proceso. Y cuatro salidas, todas ellas vectores de 4 bits, que almacenan las lecturas válidas de los sensores.
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = .85\textwidth ]{EntidadInterfazEntrada}
+		    \caption{Diagrama de la Interfaz de la Entidad Interfaz Entrada}
+		    \label{fig:EntidadInterfazEntrada}
+	\end{figure}
+
 \subsection{Entidad \textit{Control Ascensor}:} \label{bloque:ControlAscensor}
 	Esta entidad se encarga de gestionar el funcionamiento del ascensor propiamente dicho comparando las lecturas de los sensores y decidiendo que deben hacer los actuadores, el motor y la puerta.  \\ 
 
-	Como se ve en la figura (\ref{fig:EntidadesAscensorE3}), engloba tres bloques, que se explican más adelante. Se puede ver que este bloque tiene dos entradas, las lecturas del piso actual y el piso objetivo, y que tras compararlas se obtiene una salida, que codifica la accción que realizarán tanto el motor como la puerta.
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE3}), engloba tres bloques, que se explican más adelante. Según se puede observar el bloque Codigicador Binario-Decimal se utiliza dos veces.
 	\begin{figure}[H]
 		    \centering
 		    \includegraphics[width = .85\textwidth ]{EntidadAscensorInterior(E3)}
@@ -52,12 +60,18 @@
 		    \label{fig:EntidadesAscensorE3}
 	\end{figure}
 
-	Como se puede observar el bloque Codigicador Binario-Decimal se utiliza dos veces. \\ 
+	Se puede ver en la figura (\ref{fig:EntidadControlAscensor}) que este bloque tiene tres entradas, las lecturas del piso actual y el piso objetivo y el reloj que utilizaremos para hacer síncrono el proceso. Y que tras compararlas se obtiene una salida, que codifica la accción que realizarán tanto el motor como la puerta.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = .85\textwidth ]{EntidadControlAscensor}
+		    \caption{Diagrama de la Interfaz de la Entidad Control Ascensor}
+		    \label{fig:EntidadControlAscensor}
+	\end{figure} 
 
 \subsection{Entidad \textit{Visualizacion}:} \label{bloque:Visualizacion}	
 	Esta entidad se encarga de gestionar la salida visual de los datos a través de los display de 7 segmentos. Para ello codifica dichas señales a los 7 bits del display para luego, mediante un alternador de displays ir alternando cada display de forma que en cada uno de los cuatro se muestre la información debida.  \\ 
 
-	Como se ve en la figura (\ref{fig:EntidadesAscensorE2}), engloba cuatro bloques bloques, que se detallan en apartados posteriores.
+	Como se ve en la figura (\ref{fig:EntidadesAscensorE2}), engloba cuatro bloques bloques, que se detallan en apartados posteriores. Según se puede observar el bloque Decodificador7s se utiliza dos veces.
 	\begin{figure}[H]
 		    \centering
 		    \includegraphics[width = .85\textwidth ]{EntidadAscensorInterior(E2)}
@@ -65,7 +79,13 @@
 		    \label{fig:EntidadesAscensorE2}
 	\end{figure}
 
-	Como se puede observar el bloque Decodificador7s se utiliza dos veces. \\ 
+	Se puede ver en la figura (\ref{fig:EntidadVisualizacion}) que este bloque tiene cinco entradas, estado del motor, estado de la puerta, el piso actual, el piso destino y el reloj que utilizaremos para hacer síncrono el proceso. Y las cinco salidas necesarias para mostrar los datos en el display.
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = .85\textwidth ]{EntidadVisualizacion}
+		    \caption{Diagrama de la Interfaz de la Entidad Visualizacion}
+		    \label{fig:EntidadVisualizacion}
+	\end{figure} 
 
 
 \subsection{Bloque \textit{Decodificador a 7 segmentos}:} \label{bloque:Decodificador7s}
@@ -102,7 +122,7 @@
 		    \label{fig:BloqueAlternadorDisplay}
 	\end{figure}
 
-\subsection{Bloque \textit{PistoActual}:} \label{bloque:PisoActual}
+\subsection{Bloque \textit{PisoActual}:} \label{bloque:PisoActual}
     Como se ha dicho anteriormente en cada piso hay un final de carrera que detecta el paso del ascensor. El propósito de este bloque es el de filtrar dicha entrada de 4 bits. En este caso lo que interesa es saber en que piso estoy o en que piso he estado por última vez. Cuando el ascensor se encuentra entre dos pisos la entrada de los sensores será \textit{0000}, este bloque lo que hará será mantener en la salida del mismo el último piso por el que haya pasado el ascensor. \\ 
     
     Como se puede apreciar en el siguiente diagrama este bloque tiene una entrada, un vector de 4 bits (los finales de carrera de cada piso) y una salida, también de 4 bits, codificando el piso en el que se encuentra actualmente. \\ 
@@ -138,7 +158,7 @@
 		    \label{fig:BloqueBloqueadorPisoVoy}
 	\end{figure}
 	
-\subsection{Código Bloque \textit{Decodificador Binario a Entero}:} \label{bloque:DecodificadorBinarioEntero}
+\subsection{Bloque \textit{Decodificador Binario a Entero}:} \label{bloque:DecodificadorBinarioEntero}
 	En este bloque se traduce la señal binaria que codifica tanto el piso actual como el piso de destino a decimal para su posterior comparación.
 	Se puede consultar dicha codificación en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\ 
 
@@ -152,7 +172,7 @@
 
 \subsection{Bloque \textit{Comparador}:} \label{bloque:Comparador}
 
-	En este bloque es donde se deciden las acciones del ascensor. Para ello se introducen dos señales, dos números enteros (correspondientes al piso actual y al piso objetivo) y se comparan para dar una salida, que determinará la reacción del ascensor (puerta y motor). \\ 
+	En este bloque es donde se deciden las acciones del ascensor. Para ello se introducen dos señales, dos números enteros (correspondientes al piso actual y al piso objetivo) y se comparan para dar una salida, que determinará la reacción del ascensor (puerta y motor). El reloj lo empleamos para sincronizar el proceso. \\ 
 
     La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueComparador}:
     
@@ -167,7 +187,7 @@
 
 \subsection{Bloque \textit{Controlador Motor} y \textit{Controlador Puerta}:} \label{bloque:MotorPuerta}
     
-    En este caso no tenemos ni puerta ni motor físico así que se ha decidido sacar la "reacción" que tendrían estos elementos por dos de los display de 7 segmentos de que se dispone. Este bloque se encarga de recibir la señal de dos bits que codifica la decisión del comparador (como se mueve el motor y que hace la puerta) y saca dos señales de 7 bits donde codifica el caracter que se mostrará en cada caso. Se puede ver el esquema en la figura (\ref{fig:MotorPuerta}). Se podrá ver en los displays los siguientes caracteres:\\ 
+    En este caso no tenemos ni puerta ni motor físico así que se ha decidido sacar la reacción que tendrían estos elementos por dos de los display de 7 segmentos de que se dispone. Este bloque se encarga de recibir la señal de dos bits que codifica la decisión del comparador (como se mueve el motor y que hace la puerta) y saca dos señales de 7 bits donde codifica el caracter que se mostrará en cada caso. Se puede ver el esquema en la figura (\ref{fig:MotorPuerta}). Se podrá ver en los displays los siguientes caracteres:\\ 
 
 	\begin{table}[H]
         \centering
@@ -201,7 +221,7 @@
 		    \label{fig:BloqueMotorPuerta}
 	\end{figure}
 
-\subsection {Bloque \textit{DecodificadoLED} :} \label{bloque:DecodificadorLED}
+\subsection {Bloque \textit{DecodificadorLED} :} \label{bloque:DecodificadorLED}
     Este bloque se encarga de gestionar la salida de los leds. Usaremos los 8 leds de la placa, mostrando así dos pisos almacenados codificados según indicamos en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\
     
 	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, dos vectores de 4 bits (dos pisos diferentes) y un reloj que utilizaremos para hacer síncrono el proceso. \\ 
