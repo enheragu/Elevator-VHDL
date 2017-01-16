@@ -194,7 +194,7 @@
 	Para entender el comportamiento obtenido en la simulación debemos recordar, el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal} donde podemos ver como se codifica internamente el número de piso. También hay que aclarar que la salida es de tipo integer aunque en la imagen se muestra como una salida binaria (entero - binario: 0 - 0, 1 - 1, 2 - 10, 3 - 11, 4 - 100).
 
 \subsection{Código Bloque \textit{Comparador}:} \label{code:Comparador}
-	Como se ha visto en la seccion (\ref{bloque:Comparado}) este bloque compara las dos señales enteras; si el piso objetivo está por encima del actual el motor sube y la puerta se cierra, si el piso objetivo es igual al piso actual el motor está parado y la puerta abierta, y finalmente, si el piso objetivo es menor que el piso actual el motor baja manteniendo la puerta cerrada durante el proceso. A continuación se presenta el código del bloque: \\ 
+	Como se ha visto en la seccion (\ref{bloque:Comparador}) este bloque compara las dos señales enteras; si el piso objetivo está por encima del actual el motor sube y la puerta se cierra, si el piso objetivo es igual al piso actual el motor está parado y la puerta abierta, y finalmente, si el piso objetivo es menor que el piso actual el motor baja manteniendo la puerta cerrada durante el proceso. A continuación se presenta el código del bloque: \\ 
 
     \inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/Comparador.vhd}	
 
@@ -230,7 +230,7 @@
 	Según podemos observar logramos la conducta deseada: si el piso al que vas (PisoVoy) es mayor que el piso en el que estas (PisoEstoy) el motor sube, sin embargo cuando ocurre lo contrario el motor baja y finalmente si ambos pisos son el mismo el motor se para.
 
 \subsection{Código Bloque \textit{ Simulacion Motor Puerta}:} \label{code:MotorPuerta}
-	Como se ha visto en la sección (\ref{boque:MotorPuerta}) al no tener motor y puerta reales se ha optado por sacar su reacción a traves de los displays. Este bloque es similar al bloque Decodificador7s (se puede encontrar la descripción en la seccion \ref{bloque:Decodificador7s} así como su codificación en la sección \ref{code:Decodificador7s} para observar las similitudes). Lo que hace es tomar la señal de entrada de dos bits, que codifica la reacción del motor y la puerta para transformarla en un caracter que se podrá mostrar a través del display de 7 segmentos. La codificación en VHDL se puede ver a continuación: \\ 
+	Como se ha visto en la sección (\ref{bloque:MotorPuerta}) al no tener motor y puerta reales se ha optado por sacar su reacción a traves de los displays. Este bloque es similar al bloque Decodificador7s (se puede encontrar la descripción en la seccion \ref{bloque:Decodificador7s} así como su codificación en la sección \ref{code:Decodificador7s} para observar las similitudes). Lo que hace es tomar la señal de entrada de dos bits, que codifica la reacción del motor y la puerta para transformarla en un caracter que se podrá mostrar a través del display de 7 segmentos. La codificación en VHDL se puede ver a continuación: \\ 
 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/MotorPuerta.vhd}
 
@@ -339,7 +339,7 @@
 Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDisplay se encarga de mostrar en las cuatro pantallas de siete segmentos el estado del ascensor. \\ 
 	\inputminted[frame=lines,fontsize=\footnotesize,linenos]{vhdl}{CodeFiles/EntidadVisualizacion.vhd}
 
-	Como se puede ver en la Figura (\ref{fig:VisualizacionOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
+	Como se puede ver en la Figura (\ref{fig:EntidadVisualizacionOK}) el esquema obtenido una vez programado y sintetizado se corresponde con el que se pretendía.
     \begin{figure}[H]
 		    \centering
 		    \includegraphics[width = 0.6\textwidth ]{EntidadVisualizacionOK}
@@ -349,7 +349,7 @@ Esta entidad, formada por tres bloques, dos Decodificador7s y un AlternadorDispl
     Además podemos ver en la Figura (\ref{fig:EntidadVisualizacionImplementacion}) como se compone internamente el bloque, como se codifica en hardware esta utilidad:
     \begin{figure}[H]
 		    \centering
-		    \includegraphics[width = 0.9\textwidth ]{EntidadVisualizacion}
+		    \includegraphics[width = 0.9\textwidth ]{EntidadVisualizacionImplementacion}
 		    \caption{Esquema interno de la Entidad Visualizacion}
 		    \label{fig:EntidadVisualizacionImplementacion}
 	\end{figure}

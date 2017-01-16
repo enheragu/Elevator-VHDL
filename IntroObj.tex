@@ -83,7 +83,7 @@
 
     Como se puede ver en la figura los 4 displays comparten 8 pines de control, para elegir un display u otro están los Ánodos de control, en la tabla (\ref{tab:anodoControl}). \\ 
 
-    Es importante tener en cuenta que los cuatro display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente. \\ 
+    Es importante tener en cuenta que los cuatro display de 7 segmentos comparten la entrada de 7 bits que codifica el caracter; se elige por que display se muestra dicha información sacando un valor de alto nivel por el ánodo de control correspondiente. Cabe destacar que estos displays son activos a nivel bajo. \\ 
 
     \begin{table}[H]
             \centering
@@ -155,25 +155,23 @@
         \label{tab:tablaEntradasPulsadores}
     \end{table}
 
-%    Por ahora no utilizamos los LEDs, queda comentado por si volvemos a usarlos.
-%
-%    Como se ha dicho en el apartado (\ref{subsection:Spartan-3}) la placa incorpora ocho LEDs, representados con el número 12 en la figura (\ref{fig:Spartan3TopSide}). A continuación se muestra la correlación de cada LED con la patilla de la FPGA:
+    Como se ha dicho en el apartado (\ref{subsection:Spartan-3}) la placa incorpora ocho LEDs, representados con el número 12 en la figura (\ref{fig:Spartan3TopSide}). A continuación se muestra la correlación de cada LED con la patilla de la FPGA:
 
-%   \begin{table}[H]
-%            \centering
-%            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-%                \hline
-%                \rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{9}{|c|}{  \textbf{ {Salidas LED}}} \\
-%                \hline \hline
-%                \textbf{  LED  } & LD7 & LD6 & LD5 & LD4 & LD3 & LD2 & LD1 & LD0 \\
-%                \hline
-%                \textbf{  FPGA Pin  } & P11 & P12 & N12 & P13 & N14 & L12 & P14 & K12  \\
-%                \hline
-%                 
-%            \end{tabular}
-%        \caption{ Salidas físicas de los LEDs en la Spartan-3 }
-%        \label{tab:tablaSalidasLED}
-%    \end{table}
+   \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+                \hline
+                \rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{9}{|c|}{  \textbf{ {Salidas LED}}} \\
+                \hline \hline
+                \textbf{  LED  } & LD7 & LD6 & LD5 & LD4 & LD3 & LD2 & LD1 & LD0 \\
+                \hline
+                \textbf{  FPGA Pin  } & P11 & P12 & N12 & P13 & N14 & L12 & P14 & K12  \\
+                \hline
+                 
+            \end{tabular}
+        \caption{ Salidas físicas de los LEDs en la Spartan-3 }
+        \label{tab:tablaSalidasLED}
+    \end{table}
 
 \subsection{Estructura de la memoria e información útil}
 

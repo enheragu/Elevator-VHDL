@@ -3,7 +3,7 @@
  -- Project : Elevator-VHDL
  -------------------------------------------------------------------------------
  -- File : EntidadVisualizacion_tb.vhd
- -- Author : AlbertoBB
+ -- Author : AranchaCM, AlbertoBB, EnriqueHA
  -- Created : 2017/01/11
  -- Last modified : 2017/01/11
  -------------------------------------------------------------------------------

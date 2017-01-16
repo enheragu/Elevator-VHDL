@@ -1,7 +1,7 @@
 \subsection{Definición de pines de entrada y salida de la FPGA:}
 	\begin{table}[H]
     \centering
-		\begin{tabular}{|c|c|c||c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
 			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{6}{|c|}{  \textbf{ {Configuración Pines de entrada}}} \\
 			\hline \hline
@@ -67,7 +67,7 @@
     \centering
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 			\hline
-			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{8}{|c|}{  \textbf{ {Configuración Pines de los displays de 7 segmentos}}} \\
+			\rowcolor[rgb]{0.21,0.69,0.87}\multicolumn{8}{|c|}{  \textbf{ {Configuración Pines de los LEDs}}} \\
 			\hline \hline
 			LED[0] & LED[1] & LED[2] & LED[3] & LED[4] & LED[5] & LED[6] & LED[7] \\
 			\hline			
@@ -185,5 +185,10 @@
 	\end{itemize}
 
 \subsection{Conclusiones:}
-	En este proyecto hemos llegado a usar seis bloque diferentes, dos de ellos usados dos veces. Estos bloques son: Decodificador7s, AlternadorDisplay, PisoActual, BloqueadorPisoVoy, DecodificadorBinarioEntero y Comparador. Estos bloques realizan tareas simples para el funcionamiento del ascensor. Estas tareas son englobadas en un nivel superior, tres entidades, que relacionan y comunican estos bloques. Estas tres entidades son: Visualizacion, Entrada y Control ascensor. Estas, se encuentran a un nivel intermedio junto otros dos bloques que son: ControladorMotorPuerta y DecodificadorLED. 
-Por último estas tres entidades y estos dos bloques quedan englobados en la entidad de más alto nivel, Ascesor, la cual responde al funcionamiento final de nuestro proyecto. Destacamos como a base de niveles hemos ido pasando de tareas más simples hasta una más compleja como es el control de un ascensor. Este método de trabajo nos ha permitido afrontar de una forma sencilla nuestro proyecto.
+	En este proyecto hemos llegado a usar 8 bloque diferentes, dos de ellos instanciados varias veces. Estos bloques realizan tareas simples para el funcionamiento del ascensor. Estas tareas son englobadas en un nivel superior por tres entidades, que relacionan y comunican dichos bloques. Estas tres entidades son: Visualizacion, Interfaz Entrada y Control ascensor. Estas tres entidades se encuentran junto a dos de los bloques en un nivel intermedio, que a su vez es englobado por la entidad superior Ascensor. La entidad Ascesor responde al funcionamiento final de nuestro proyecto. \\ 
+
+	Destacamos como a base de niveles hemos ido pasando de tareas más simples hasta una más compleja como es el control de un ascensor. Este método de trabajo nos ha permitido afrontar de una forma sencilla nuestro proyecto. \\
+
+	En las pruebas sobre la FPGA hemos detectado ciertos errores aleatorios el las entradas de los pulsadores y los interruptores que en algunos casos causaban señales incorrectas. Tras diversas pruebas deshabilitado diferentes entradas y modificando el tratamiento que se hace de dicha información hemos concluido que estos errores se deben a un tema de compatibilidad electromagnética, de forma que las entradas se acoplan. Se entiende que en una fase más avanzada del diseño se debería repasar el circuito resultante para evitar dicho fallo. Además, para intentar paliarlo hemos implementado diferentes filtros en el sistema para evitar que dichos errores se propaguen. Cuando se detecta un error por seguridad el motor se detiene y la puerta queda abierta.\\ 
+
+	Como se puede ver en el desarrollo del a memoria se han cumplido los retos considerados inicialmente y se han añadido nuevas funcionalidades según se ha adquirido soltura en la programación en VHDL como en el uso de GitHub y Latex. En base a estos resultados consideramos que el trabajo ha sido finalizado satisfactoriamente y nos ha permitido aprender de forma muy dinámica sobre el diseño y gestión de proyectos de electrónica digital.

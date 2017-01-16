@@ -3,7 +3,7 @@
 -- Project : Elevator-VHDL
 -------------------------------------------------------------------------------
 -- File : BloqueadorPisoVoy.vhd
--- Author : AranchaCM
+-- Author : Primera versión: AranchaCM; Versión con memorias: AranchaCM y EnriqueHA
 -- Created : 2016/12/26
 -- Last modified : 2017/01/11
 -------------------------------------------------------------------------------

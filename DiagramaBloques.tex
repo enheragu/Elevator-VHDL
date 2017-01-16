@@ -95,6 +95,13 @@
 	
 	Como se puede apreciar en el siguiente diagrama la interfaz de este bloque tiene cinco entradas, 4 vectores de 7 bits, que contienen la información a mostrar  y un reloj que utilizaremos para hacer síncrono el proceso. Y cinco salidas, cuatro de ellas son enteros que indican cual es el digito a revelar y un vector de 4 bits, que codifica la información a mostrar del digito elegido.
 
+	\begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.7\textwidth ]{BloqueAlternadorDisplay}
+		    \caption{Diagrama Interfaz Bloque Alternador Displays}
+		    \label{fig:BloqueAlternadorDisplay}
+	\end{figure}
+
 \subsection{Bloque \textit{PistoActual}:} \label{bloque:PisoActual}
     Como se ha dicho anteriormente en cada piso hay un final de carrera que detecta el paso del ascensor. El propósito de este bloque es el de filtrar dicha entrada de 4 bits. En este caso lo que interesa es saber en que piso estoy o en que piso he estado por última vez. Cuando el ascensor se encuentra entre dos pisos la entrada de los sensores será \textit{0000}, este bloque lo que hará será mantener en la salida del mismo el último piso por el que haya pasado el ascensor. \\ 
     
@@ -114,7 +121,7 @@
 	
 	Se puede consultar el código VHDL de este módulo en el Apartado \ref{code:PisoActual} así como el código de su testbench correspondiente en el Apartado \ref{code:PisoActual_tb}.\\ 
 
-\subsection{Bloque \textit{Bloqueador PisoVoy}:}
+\subsection{Bloque \textit{Bloqueador PisoVoy}:} \label{bloque:BloqueadorPisoVoy}
     Mediante 4 interruptores (uno por planta) se ha codificado la llamada al ascensor, indicando a que piso debe ir el ascensor. La finalidad de este bloque es filtrar dicha entrada de 4 bits, nos interesa saber a qué piso debe ir el ascensor o a que piso ha ido por última vez. Pudiendo almacenar hasta tres pisos, a los que debe ir, en orden y parando un tiempo antes de ir al siguiente piso almacenado. \\
     
 	Como se puede apreciar en el siguiente diagrama este bloque tiene tres entradas, un vector de 4 bits (los botones de cada piso), un vector de 2 bits (estado del motor) y el reloj que utilizaremos para hacer síncrono el proceso. Y tres salidas, vectores de 4 bits, codificando el piso al que debe ir el ascensor (PisoVoy) y dos pisos almacenados en las variables auxiliares (MemPisoVoy1 y MemPisoVoy2), codificando los piso a los que el usuario desea ir. \\
@@ -185,6 +192,15 @@
 		    \label{fig:MotorPuerta}
 	\end{figure}
 
+	La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueMotorPuerta}:
+    
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueMotorPuerta}
+		    \caption{Diagrama Bloque Motor-Puerta}
+		    \label{fig:BloqueMotorPuerta}
+	\end{figure}
+
 \subsection {Bloque \textit{DecodificadoLED} :} \label{bloque:DecodificadorLED}
     Este bloque se encarga de gestionar la salida de los leds. Usaremos los 8 leds de la placa, mostrando así dos pisos almacenados codificados según indicamos en el Cuadro (\ref{tab:tabla1ApendiceA}) del Apéndice \ref{app:codEntSal}. \\
     
@@ -192,4 +208,11 @@
 	
 	Y una salida, un vector de 8 bits, que indica los leds que debe encender. Los cuatro bits de la derecha corresponden al primer piso almacenado y los otros cuatro al último piso almacenado.
     
-	
+	La interfaz, entradas y salidas, de este bloque se puede ver su representación en la Figura \ref{fig:BloqueDecodificadorLED}:
+    
+    \begin{figure}[H]
+		    \centering
+		    \includegraphics[width = 0.6\textwidth ]{BloqueDecodificadorLED}
+		    \caption{Diagrama Bloque BloqueDecodificadorLED}
+		    \label{fig:BloqueDecodificadorLED}
+	\end{figure}

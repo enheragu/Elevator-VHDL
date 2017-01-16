@@ -51,14 +51,14 @@ ARCHITECTURE behavior OF EntidadInterfazEntrada_tb IS
 	type vtest_vector is array (natural range <>) of vtest;
  
    constant test: vtest_vector := (  
-				 (Motor => "00", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
-				 (Motor => "10", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
-				 (Motor => "10", SensorVoy => "0010", PisoVoy => "1000", SensorEstoy => "0000", PisoEstoy => "0010"),
-				 (Motor => "00", SensorVoy => "0110", PisoVoy => "1000", SensorEstoy => "1100", PisoEstoy => "0010"),
-				 (Motor => "00", SensorVoy => "0001", PisoVoy => "0001", SensorEstoy => "0000", PisoEstoy => "0010"),
-				 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "0100", PisoEstoy => "0100"),
-				 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "1000", PisoEstoy => "1000"),
-				 (Motor => "00", SensorVoy => "0010", PisoVoy => "0010", SensorEstoy => "0000", PisoEstoy => "1000")
+	 (Motor => "00", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
+	 (Motor => "10", SensorVoy => "1000", PisoVoy => "1000", SensorEstoy => "0010", PisoEstoy => "0010"),
+	 (Motor => "10", SensorVoy => "0010", PisoVoy => "1000", SensorEstoy => "0000", PisoEstoy => "0010"),
+	 (Motor => "00", SensorVoy => "0110", PisoVoy => "1000", SensorEstoy => "1100", PisoEstoy => "0010"),
+	 (Motor => "00", SensorVoy => "0001", PisoVoy => "0001", SensorEstoy => "0000", PisoEstoy => "0010"),
+	 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "0100", PisoEstoy => "0100"),
+	 (Motor => "10", SensorVoy => "0100", PisoVoy => "0001", SensorEstoy => "1000", PisoEstoy => "1000"),
+	 (Motor => "00", SensorVoy => "0010", PisoVoy => "0010", SensorEstoy => "0000", PisoEstoy => "1000")
 	);
  
 BEGIN
